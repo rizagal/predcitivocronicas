@@ -55,10 +55,10 @@ if(selected == 'Predicción de diabetes'):
         diab_prediction = diabetes_model.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
         
         if (diab_prediction[0]==1):
-            diab_diagnosis = 'La persona es diabética'
+            diab_diagnosis = 'La persona es propensa a diabétes'
             
         else:
-            diab_diagnosis = 'La persona no es diabética'
+            diab_diagnosis = 'La persona no es propensa a diabétes'
             
             
     st.success(diab_diagnosis)
@@ -96,10 +96,10 @@ if(selected == 'Prediccion de enfermedades cardiacas'):
         heart_prediction = heart_disease_model.predict([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
         
         if (heart_prediction[0]==1):
-            heart_diagnosis = 'La persona sufre una enfermedad cardíaca.'
+            heart_diagnosis = 'La persona es propensa a una enfermedad cardíaca.'
             
         else:
-            heart_diagnosis = 'La persona no padece ninguna enfermedad cardíaca.'
+            heart_diagnosis = 'La persona no es propensa a ninguna enfermedad cardíaca.'
             
             
     st.success(heart_diagnosis)
