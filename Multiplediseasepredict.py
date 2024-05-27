@@ -38,8 +38,8 @@ if(selected == 'Predicción de diabetes'):
     
     Pregnancies = st.text_input('Número de embarazos')
     Glucose = st.text_input('Nivel de glucosa (Menos de 100 mg/dL (5,6 mmol/L ) se considera normal)')
-    BloodPressure = st.text_input('Valor de presión arterial')
-    SkinThickness = st.text_input('Valor de espesor de piel')
+    BloodPressure = st.text_input('Valor de presión arterial (Se considera normal presión sistólica de menos de 120 y una presión diastólica de menos de 80)')
+    SkinThickness = st.text_input('Valor de espesor de piel (En la mayoría de las partes del cuerpo la epidermis tiene un espesor de sólo 0,1 mm aproximadamente en total, más delgada en la piel que rodea los ojos (0,05mm) y más gruesa (entre 1 y 5mm) en las plantas de los pies.)')
     Insulin = st.text_input('Nivel de insulina')
     BMI = st.text_input('valor de IMC')
     DiabetesPedigreeFunction = st.text_input('Valor de la función Generaciones de la diabetes')
