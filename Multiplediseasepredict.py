@@ -40,8 +40,8 @@ if(selected == 'Predicción de diabetes'):
     Glucose = st.text_input('Nivel de glucosa (Menos de 100 mg/dL (5,6 mmol/L ) se considera normal)')
     BloodPressure = st.text_input('Valor de presión arterial (Se considera normal presión sistólica de menos de 120 y una presión diastólica de menos de 80)')
     SkinThickness = st.text_input('Valor de espesor de piel (En la mayoría de las partes del cuerpo la epidermis tiene un espesor de sólo 0,1 mm aproximadamente en total, más delgada en la piel que rodea los ojos (0,05mm) y más gruesa (entre 1 y 5mm) en las plantas de los pies.)')
-    Insulin = st.text_input('Nivel de insulina')
-    BMI = st.text_input('valor de IMC')
+    Insulin = st.text_input('Nivel de insulina (Los valores normales de insulina en sangre se encuentran entre 5-25 unidades por mililitro (U/ml). Cuando este parámetro es mayor a 30 U/ml en ayunas, se plantea una insulinorresistencia.)')
+    BMI = st.text_input('valor de IMC (Si su IMC es entre 18.5 y 24.9, se encuentra dentro del rango de peso normal o saludable. Si su IMC es entre 25.0 y 29.9, se encuentra dentro del rango de sobrepeso. Si su IMC es 30.0 o superior, se encuentra dentro del rango de obesidad.)')
     DiabetesPedigreeFunction = st.text_input('Valor de la función Generaciones de la diabetes')
     Age = st.text_input('Edad de la Persona')
     
