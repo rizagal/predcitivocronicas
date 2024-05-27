@@ -37,7 +37,7 @@ if(selected == 'Predicción de diabetes'):
     st.title('Predicción de diabetes mediante ML')
     
     Pregnancies = st.text_input('Número de embarazos')
-    Glucose = st.text_input('Nivel de glucosa')
+    Glucose = st.text_input('Nivel de glucosa (Menos de 100 mg/dL (5,6 mmol/L ) se considera normal)')
     BloodPressure = st.text_input('Valor de presión arterial')
     SkinThickness = st.text_input('Valor de espesor de piel')
     Insulin = st.text_input('Nivel de insulina')
