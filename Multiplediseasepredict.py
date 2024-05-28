@@ -8,6 +8,10 @@ Created on Tue Feb  7 20:12:12 2023
 import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.ensemble import IsolationForest
+import pandas as pd
 
 
 #Loading the saved models
