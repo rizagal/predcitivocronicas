@@ -25,7 +25,7 @@ with st.sidebar:
     
     selected = option_menu('Sistema de predicción de enfermedades múltiples',
                            ['Predicción de diabetes',
-                            'Prediccion de enfermedades cardiacas',
+                            'Prediccion de enfermedades cardiacas1',
                            'Deteccion de Datos Anomalos'],
                            icons = ['activity','heart'],
                            default_index = 0)
