@@ -25,7 +25,8 @@ with st.sidebar:
     
     selected = option_menu('Sistema de predicción de enfermedades múltiples',
                            ['Predicción de diabetes',
-                            'Prediccion de enfermedades cardiacas'],
+                            'Prediccion de enfermedades cardiacas',
+                           'Deteccion de Datos Anomalos'],
                            icons = ['activity','heart'],
                            default_index = 0)
     
@@ -105,55 +106,43 @@ if(selected == 'Prediccion de enfermedades cardiacas'):
     st.success(heart_diagnosis)
     
     
+if(selected == 'Deteccion de Datos Anomalos'):
     
+    #Page title
+    st.title('Deteccion de Datos Anomalos - Con Bosques de Aislamiento (Iforests)')
+    
+# Cargar datos
+carros = np.loadtxt("carros_usados.csv", delimiter=",")
 
-    
-# #Parkinsons Prediction Page
-# if(selected == 'Predicción del Parkinson'):
-    
-#     #Page title
-#     st.title('Predicción del Parkinson Usando ML')
-    
+data=pd.read_csv("carros_usados.csv")
+st.write(data.head())
 
-#     fo = st.text_input('MDVP:Fo(Hz)')
-#     fhi = st.text_input('MDVP:Fhi(Hz)')
-#     flo = st.text_input('MDVP:Flo(Hz)')
-#     Jitter_percent = st.text_input('MDVP:Jitter(%)')
-#     Jitter_Abs = st.text_input('MDVP:Jitter(Abs)')
-#     RAP = st.text_input('MDVP:RAP')
-#     PPQ = st.text_input('MDVP:PPQ')
-#     DDP = st.text_input('Jitter:DDP')
-#     Shimmer = st.text_input('MDVP:Shimmer')
-#     Shimmer_dB = st.text_input('MDVP:Shimmer(dB)')
-#     APQ3 = st.text_input('Shimmer:APQ3')
-#     APQ5 = st.text_input('Shimmer:APQ5')
-#     APQ = st.text_input('MDVP:APQ')
-#     DDA = st.text_input('Shimmer:DDA')
-#     NHR = st.text_input('NHR')
-#     HNR = st.text_input('HNR')
-#     RPDE = st.text_input('RPDE')
-#     DFA = st.text_input('DFA')
-#     spread1 = st.text_input('spread1')
-#     spread2 = st.text_input('spread2')
-#     D2 = st.text_input('D2')
-#     PPE = st.text_input('PPE')
-        
-        
-#     #Code for prediction
-#     parkinsons_diagnosis = ''
-        
-#     #Creating a button for prediction
-        
-#     if st.button('Resultado de la prueba de Parkinson'):
-#             parkinsons_prediction = parkinsons_model.predict([[fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ, DDP, Shimmer, Shimmer_dB, APQ3, APQ5, APQ, DDA, NHR, HNR, RPDE, DFA, spread1, spread2, D2, PPE]])
-            
-#             if (parkinsons_prediction[0]==1):
-#                 parkinsons_diagnosis = 'La persona sufre la enfermedad de Parkinson.'
-                
-#             else:
-#                 parkinsons_diagnosis = 'La persona no padece la enfermedad de Parkinson.'
-                
-                
-#     st.success(parkinsons_diagnosis)
-        
+resultados = np.zeros((3, carros.size//2))
+
+# Bosques de Aislamiento con diferente contaminación
+c = [0.05, 0.1] 
+for i in range(len(c)):
+    modelo = IsolationForest(contamination=c[i]).fit(carros)
+    resultados[i] = modelo.predict(carros)
+    
+# Graficar datos anómalos 
+plt.set_cmap("jet")
+fig = plt.figure(figsize=(13, 4))
+
+
+for i in range(len(c)):    
+    ax = fig.add_subplot(1, 3, i+1)
+    ax.scatter(carros[resultados[i]==-1][:, 0], 
+               carros[resultados[i]==-1][:, 1], 
+               c="skyblue", marker="s", s=500)
+    ax.scatter(carros[:, 0], 
+               carros[:, 1], 
+               c=range(carros.size//2), marker="x",
+               s=500, alpha=0.6)
+    ax.set_title("Contaminación: %0.2f" % c[i], size=18, color="purple")
+    ax.set_ylabel("Precio ($)", size=10)
+    ax.set_xlabel("Kms recorridos", size=14)
+
+st.pyplot(fig)
+
         
