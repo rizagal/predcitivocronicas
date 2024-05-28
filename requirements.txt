@@ -3,3 +3,6 @@ streamlit
 streamlit-option-menu==0.3.12
 streamlit-lottie==0.0.5
 scikit-learn==1.2.2
+numpy
+matplotlib
+pandas
