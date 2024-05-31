@@ -169,7 +169,7 @@ if(selected == 'Visualizar Datos en Tabla'):
 
     # ---- READ EXCEL ----
   
-    df = pd.read_excel("oportunidadstreamlit.xlsx")
+    df = pd.read_csv("carros_usados.csv")
     
     st.sidebar.header("Favor Filtrar:")
     ips = st.sidebar.multiselect(
