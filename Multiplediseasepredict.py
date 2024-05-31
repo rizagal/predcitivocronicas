@@ -169,14 +169,7 @@ if(selected == 'Visualizar Datos en Tabla'):
 
     # ---- READ EXCEL ----
   
-    df = pd.read_excel(
-            io="oportunidadstreamlit.xlsx",
-            engine="openpyxl",
-            sheet_name="Hoja1",
-            skiprows=0,
-            usecols="B:R",
-            nrows=291,
-        )
+    df = pd.read_excel("oportunidadstreamlit.xlsx")
     
     st.sidebar.header("Favor Filtrar:")
     ips = st.sidebar.multiselect(
