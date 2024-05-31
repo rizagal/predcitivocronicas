@@ -12,7 +12,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.ensemble import IsolationForest
 import pandas as pd
-
+import plotly.express as px  # pip install plotly-express
 
 #Loading the saved models
 
@@ -22,6 +22,9 @@ heart_disease_model = pickle.load(open('heart_disease_model.sav','rb'))
 
 parkinsons_model = pickle.load(open('parkinsons_model.sav','rb'))
 
+# emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
+st.set_page_config(page_title="Sistema de predicción de enfermedades múltiples", page_icon=":bar_chart:", layout="wide")
+
 
 #Sidebar for navigation
 
@@ -30,7 +33,8 @@ with st.sidebar:
     selected = option_menu('Sistema de predicción de enfermedades múltiples',
                            ['Predicción de diabetes',
                             'Prediccion de enfermedades cardiacas',
-                           'Deteccion de Datos Anomalos'],
+                            'Deteccion de Datos Anomalos',
+                            'Visualizar Datos en Tabla'],
                            icons = ['activity','heart'],
                            default_index = 0)
     
@@ -42,11 +46,11 @@ if(selected == 'Predicción de diabetes'):
     st.title('Predicción de diabetes mediante ML')
     
     Pregnancies = st.text_input('Número de embarazos')
-    Glucose = st.text_input('Nivel de glucosa --- (Menos de 100 mg/dL (5,6 mmol/L ) se considera normal)')
-    BloodPressure = st.text_input('Valor de presión arterial --- (Se considera normal presión sistólica de menos de 120 y una presión diastólica de menos de 80)')
-    SkinThickness = st.text_input('Valor de espesor de piel --- (En la mayoría de las partes del cuerpo la epidermis tiene un espesor de sólo 0,1 mm aproximadamente en total, más delgada en la piel que rodea los ojos (0,05mm) y más gruesa (entre 1 y 5mm) en las plantas de los pies.)')
-    Insulin = st.text_input('Nivel de insulina --- (Los valores normales de insulina en sangre se encuentran entre 5-25 unidades por mililitro (U/ml). Cuando este parámetro es mayor a 30 U/ml en ayunas, se plantea una insulinorresistencia.)')
-    BMI = st.text_input('Valor de IMC --- (Si su IMC es entre 18.5 y 24.9, se encuentra dentro del rango de peso normal o saludable. Si su IMC es entre 25.0 y 29.9, se encuentra dentro del rango de sobrepeso. Si su IMC es 30.0 o superior, se encuentra dentro del rango de obesidad.)')
+    Glucose = st.text_input('Nivel de glucosa')
+    BloodPressure = st.text_input('Valor de presión arterial')
+    SkinThickness = st.text_input('Valor de espesor de piel')
+    Insulin = st.text_input('Nivel de insulina')
+    BMI = st.text_input('valor de IMC')
     DiabetesPedigreeFunction = st.text_input('Valor de la función Generaciones de la diabetes')
     Age = st.text_input('Edad de la Persona')
     
@@ -60,10 +64,10 @@ if(selected == 'Predicción de diabetes'):
         diab_prediction = diabetes_model.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
         
         if (diab_prediction[0]==1):
-            diab_diagnosis = 'La persona es propensa a diabétes'
+            diab_diagnosis = 'La persona es diabética'
             
         else:
-            diab_diagnosis = 'La persona no es propensa a diabétes'
+            diab_diagnosis = 'La persona no es diabética'
             
             
     st.success(diab_diagnosis)
@@ -101,52 +105,134 @@ if(selected == 'Prediccion de enfermedades cardiacas'):
         heart_prediction = heart_disease_model.predict([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
         
         if (heart_prediction[0]==1):
-            heart_diagnosis = 'La persona es propensa a una enfermedad cardíaca.'
+            heart_diagnosis = 'La persona sufre una enfermedad cardíaca.'
             
         else:
-            heart_diagnosis = 'La persona no es propensa a ninguna enfermedad cardíaca.'
+            heart_diagnosis = 'La persona no padece ninguna enfermedad cardíaca.'
             
             
     st.success(heart_diagnosis)
     
     
+    
+
+    
+#Parkinsons Prediction Page
 if(selected == 'Deteccion de Datos Anomalos'):
     
     #Page title
     st.title('Deteccion de Datos Anomalos - Con Bosques de Aislamiento (Iforests)')
     
-# Cargar datos
-carros = np.loadtxt("carros_usados.csv", delimiter=",")
+    # Cargar datos
+    carros = np.loadtxt("carros_usados.csv", delimiter=",")
 
-data=pd.read_csv("carros_usados.csv")
-st.write(data.head())
+    # data= pickle.load(open('diabetes_model.sav','rb'))
+    # st.write(data.head())
 
-resultados = np.zeros((3, carros.size//2))
+    resultados = np.zeros((3, carros.size//2))
 
-# Bosques de Aislamiento con diferente contaminación
-c = [0.05, 0.1] 
-for i in range(len(c)):
-    modelo = IsolationForest(contamination=c[i]).fit(carros)
-    resultados[i] = modelo.predict(carros)
-    
-# Graficar datos anómalos 
-plt.set_cmap("jet")
-fig = plt.figure(figsize=(13, 4))
-
-
-for i in range(len(c)):    
-    ax = fig.add_subplot(1, 3, i+1)
-    ax.scatter(carros[resultados[i]==-1][:, 0], 
-               carros[resultados[i]==-1][:, 1], 
-               c="skyblue", marker="s", s=500)
-    ax.scatter(carros[:, 0], 
-               carros[:, 1], 
-               c=range(carros.size//2), marker="x",
-               s=500, alpha=0.6)
-    ax.set_title("Contaminación: %0.2f" % c[i], size=18, color="purple")
-    ax.set_ylabel("Precio ($)", size=10)
-    ax.set_xlabel("Kms recorridos", size=14)
-
-st.pyplot(fig)
-
+    # Bosques de Aislamiento con diferente contaminación
+    c = [0.05, 0.1] 
+    for i in range(len(c)):
+        modelo = IsolationForest(contamination=c[i]).fit(carros)
+        resultados[i] = modelo.predict(carros)
         
+    # Graficar datos anómalos 
+    plt.set_cmap("jet")
+    fig = plt.figure(figsize=(13, 4))
+
+
+    for i in range(len(c)):    
+        ax = fig.add_subplot(1, 3, i+1)
+        ax.scatter(carros[resultados[i]==-1][:, 0], 
+                carros[resultados[i]==-1][:, 1], 
+                c="skyblue", marker="s", s=500)
+        ax.scatter(carros[:, 0], 
+                carros[:, 1], 
+                c=range(carros.size//2), marker="x",
+                s=500, alpha=0.6)
+        ax.set_title("Contaminación: %0.2f" % c[i], size=18, color="purple")
+        ax.set_ylabel("Precio ($)", size=10)
+        ax.set_xlabel("Kms recorridos", size=14)
+
+    st.pyplot(fig)
+
+
+
+
+
+#Parkinsons Prediction Page
+if(selected == 'Visualizar Datos en Tabla'):
+    
+    #Page title
+    st.title('Visualizar Datos en Tabla')   
+
+    # ---- READ EXCEL ----
+  
+    df = pd.read_excel(
+            io="oportunidadstreamlit.xlsx",
+            engine="openpyxl",
+            sheet_name="Hoja1",
+            skiprows=0,
+            usecols="B:R",
+            nrows=291,
+        )
+    
+    st.sidebar.header("Favor Filtrar:")
+    ips = st.sidebar.multiselect(
+    "Seleccione IPS:",
+    options=df["NOMBREIPS"].unique(),
+    default=df["NOMBREIPS"].unique()
+    )
+
+
+    df_selection = df.query(
+    "NOMBREIPS == @ips"
+    )
+
+    # st.dataframe(df_selection)
+
+    st.markdown("""---""")
+
+    # TOP KPI's
+    total_sales = int(df_selection["NOMBREIPS"].count())
+    # average_rating = round(df_selection["Rating"].mean(), 1)
+    # star_rating = ":star:" * int(round(average_rating, 0))
+    # average_sale_by_transaction = round(df_selection["Total"].mean(), 2)
+
+    left_column, middle_column, right_column = st.columns(3)
+    with left_column:
+        st.subheader("Total Registros:")
+        st.subheader(f"{total_sales:,}")
+    # with middle_column:
+    #     st.subheader("Average Rating:")
+    #     st.subheader(f"{average_rating} {star_rating}")
+    # with right_column:
+    #     st.subheader("Average Sales Per Transaction:")
+    #     st.subheader(f"US $ {average_sale_by_transaction}")
+    
+
+    # SALES BY PRODUCT LINE [BAR CHART]
+    sales_by_product_line = df_selection.groupby(by=["SERVICIO"])[["OPORTUNIDAD"]].mean().sort_values(by="OPORTUNIDAD")
+    fig_product_sales = px.bar(
+        sales_by_product_line,
+        x="OPORTUNIDAD",
+        y=sales_by_product_line.index,
+        orientation="h",
+        title="<b>Oportunidad por Servicio</b>",
+        color_discrete_sequence=["#0083B8"] * len(sales_by_product_line),
+        template="plotly_white",
+    )
+    fig_product_sales.update_layout(
+        plot_bgcolor="rgba(0,0,0,0)",
+        xaxis=(dict(showgrid=False))
+    )
+
+   
+
+    col1,col2=st.columns(2)
+
+    with col1:
+      st.dataframe(df_selection)
+    with col2:
+       fig_product_sales       
