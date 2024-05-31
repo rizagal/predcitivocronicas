@@ -14,7 +14,7 @@ from sklearn.ensemble import IsolationForest
 import pandas as pd
 import plotly.express as px  # pip install plotly-express
 
-#Loading the saved models
+#Loading the saved modelsg
 
 diabetes_model = pickle.load(open('diabetes_model.sav','rb'))
 
