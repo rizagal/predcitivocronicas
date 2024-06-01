@@ -178,9 +178,15 @@ if(selected == 'Visualizar Datos en Tabla'):
     default=df["NOMBREIPS"].unique()
     )
 
+    mes = st.sidebar.multiselect(
+    "Seleccione Mes:",
+    options=df["MES"].unique(),
+    default=df["MES"].unique()
+    )
+
 
     df_selection = df.query(
-    "NOMBREIPS == @ips"
+    "NOMBREIPS == @ips & MES == @mes"
     )
 
     # st.dataframe(df_selection)
