@@ -53,7 +53,7 @@ with st.sidebar:
 if(selected == 'Modelo Construido Riesgo Cardiovascular'):
     
     #Page title
-    st.title('Modelo Construido Riesgo Cardiovascular')   
+    st.title('Modelo Construido Riesgo Cardiovascular.')   
 
     # Para que funcione el selectbox se necesita de la funcion que esta arriba def format_func(option):
     # return CHOICES[option]    
