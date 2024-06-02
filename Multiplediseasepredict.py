@@ -28,6 +28,14 @@ parkinsons_model = pickle.load(open('parkinsons_model.sav','rb'))
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="Resultado Indicadores y Sistema de predicción de enfermedades", page_icon=":bar_chart:", layout="wide")
 
+#remove default theme
+theme_plotly = None # None or streamlit
+
+ 
+# CSS Style
+with open('style.css')as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
+
 st.sidebar.image("SIGES17.png",caption="")
 
 
