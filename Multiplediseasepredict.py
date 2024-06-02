@@ -274,8 +274,7 @@ if(selected == 'Indicadores de Calidad'):
     with left_column:
         # st.subheader("Total Registros:")
         # st.subheader(f"{total_sales:,}")
-        st.info('Total Investment', icon="🔍")
-        st.metric(label = 'sum TZS', value= f"{total_sales:,.0f}")
+        st.info('Total Investment', icon="🔍")     
         st.metric(label = 'Total Registros:', value=f"{total_sales:,.0f}")
     # with middle_column:
     #     st.subheader("Average Rating:")
@@ -285,7 +284,7 @@ if(selected == 'Indicadores de Calidad'):
     #     st.subheader(f"US $ {average_sale_by_transaction}")
     
 
-    # SALES BY PRODUCT LINE [BAR CHART]
+    # [BAR CHART]
     sales_by_product_line = df_selection.groupby(by=["SERVICIO"])[["OPORTUNIDAD"]].mean().sort_values(by="OPORTUNIDAD")
     fig_product_sales = px.bar(
         sales_by_product_line,
