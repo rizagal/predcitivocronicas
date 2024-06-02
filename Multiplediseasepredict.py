@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 from sklearn.ensemble import IsolationForest
 import pandas as pd
 import plotly.express as px  # pip install plotly-express
-
+import webbrowser
 
 
 # Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
@@ -51,10 +51,11 @@ with st.sidebar:
                             'Prediccion de enfermedades cardiacas',
                             'Predicción de diabetes',
                             'Modelo Construido Riesgo Cardiovascular',
-                            'Deteccion de Datos Anomalos'],
-                           icons = ['activity','heart','house','book'],
+                            'Deteccion de Datos Anomalos',
+                            'Cuerpo Humano Interactivo'],
+                           icons = ['activity','heart','house','book','pen','person'],
                            default_index = 0)
-    
+   
 
 
 #Prediccion con modelo construido con info de pacientes propios
@@ -307,3 +308,8 @@ if(selected == 'Indicadores de Calidad'):
       st.dataframe(df_selection)
     with col2:
        fig_product_sales
+
+
+
+if(selected == 'Cuerpo Humano Interactivo'):
+    webbrowser.open("http://ideabien-001-site2.atempurl.com/",new=0)
