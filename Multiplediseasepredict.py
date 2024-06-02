@@ -16,7 +16,8 @@ import plotly.express as px  # pip install plotly-express
 
 #Loading the saved modelsg
 
-# # Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
+
+# Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
 riesgocardio_model = pickle.load(open('model_datosderiesgo.pkl','rb'))
 
 diabetes_model = pickle.load(open('diabetes_model.sav','rb'))
@@ -53,7 +54,7 @@ with st.sidebar:
 if(selected == 'Modelo Construido Riesgo Cardiovascular'):
     
     #Page title
-    st.title('Modelo Construido Riesgo Cardiovascular.')   
+    st.title('Modelo Construido Riesgo Cardiovascular')   
 
     # Para que funcione el selectbox se necesita de la funcion que esta arriba def format_func(option):
     # return CHOICES[option]    
@@ -179,7 +180,7 @@ if(selected == 'Prediccion de enfermedades cardiacas'):
 if(selected == 'Deteccion de Datos Anomalos'):
     
     #Page title
-    st.title('Deteccion de Datos Anomalos - Con Bosques de Aislamiento (Iforests)')
+    st.title('Deteccion de Datos Anomalos en Oportunidad de Consulta Medica- Con Bosques de Aislamiento (Iforests)')
     
     # Cargar datos
     carros = np.loadtxt("deteccion_anomalos.csv", skiprows=1, usecols=(1, 2), delimiter=",")
@@ -226,21 +227,21 @@ if(selected == 'Indicadores de Calidad'):
   
     df = pd.read_csv("oportunidadstreamlit.csv")
     
-    st.sidebar.header("Favor Filtrar:")
-    ips = st.sidebar.selectbox(
+    st.header("Favor Filtrar:")
+    ips = st.selectbox(
     "Seleccione IPS:",
     options=df["NOMBREIPS"].unique(),
     help="Seleccione Sede",  
     )
 
-    mes = st.sidebar.multiselect(
+    mes = st.multiselect(
     "Seleccione Mes:",
     options=df["MES"].unique(),
     default=df["MES"].unique()
 )
 
 
-    servicio = st.sidebar.multiselect(
+    servicio = st.multiselect(
     "Seleccione Servicio:",
     options=df["SERVICIO"].unique(),
     default=df["SERVICIO"].unique()
@@ -280,7 +281,7 @@ if(selected == 'Indicadores de Calidad'):
         x="OPORTUNIDAD",
         y=sales_by_product_line.index,
         orientation="h",
-        title="<b>Oportunidad por Servicio</b>",
+        title="<b>Consolidado Oportunidad por Servicio Durante los Meses Seleccionados</b>",
         color_discrete_sequence=["#0083B8"] * len(sales_by_product_line),
         template="plotly_white",
     )
