@@ -275,7 +275,7 @@ if(selected == 'Indicadores de Calidad'):
         # st.subheader("Total Registros:")
         # st.subheader(f"{total_sales:,}")
         st.info('Total Investment', icon="🔍")
-        st.metric(label = 'sum TZS', value= f"{total_investment:,.0f}")
+        st.metric(label = 'sum TZS', value= f"{total_sales:,.0f}")
         st.metric(label = 'Total Registros:', value=f"{total_sales:,.0f}")
     # with middle_column:
     #     st.subheader("Average Rating:")
