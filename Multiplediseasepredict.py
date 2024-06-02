@@ -271,7 +271,7 @@ if(selected == 'Indicadores de Calidad'):
    
 
     left_column, middle_column, right_column = st.columns(3)
-    with left_column:
+    with open('style.css')as f:
         # st.subheader("Total Registros:")
         # st.subheader(f"{total_sales:,}")
         st.metric(label="Total Registros:",value=f"{total_sales:,.0f}")
