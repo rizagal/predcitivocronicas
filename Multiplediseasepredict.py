@@ -14,7 +14,9 @@ from sklearn.ensemble import IsolationForest
 import pandas as pd
 import plotly.express as px  # pip install plotly-express
 
-#Loading the saved modelsg
+# CSS Style
+with open('style.css')as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
 
 
 # Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
