@@ -311,4 +311,4 @@ if(selected == 'Indicadores de Calidad'):
 
 
 if(selected == 'Cuerpo Humano Interactivo'):
-    webbrowser.open("http://ideabien-001-site2.atempurl.com/")
+    webbrowser.open_new_tab("http://ideabien-001-site2.atempurl.com/")
