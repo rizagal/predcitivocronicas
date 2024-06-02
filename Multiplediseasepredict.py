@@ -16,7 +16,7 @@ import plotly.express as px  # pip install plotly-express
 
 #Loading the saved modelsg
 
-# Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
+# # Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
 riesgocardio_model = pickle.load(open('model_datosderiesgo.pkl','rb'))
 
 diabetes_model = pickle.load(open('diabetes_model.sav','rb'))
@@ -26,21 +26,77 @@ heart_disease_model = pickle.load(open('heart_disease_model.sav','rb'))
 parkinsons_model = pickle.load(open('parkinsons_model.sav','rb'))
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
-st.set_page_config(page_title="Sistema de predicción de enfermedades múltiples", page_icon=":bar_chart:", layout="wide")
+st.set_page_config(page_title="Resultado Indicadores y Sistema de predicción de enfermedades", page_icon=":bar_chart:", layout="wide")
 
+st.sidebar.image("SIGES17.png",caption="")
+
+
+def format_func(option):
+    return CHOICES[option]    
 
 #Sidebar for navigation
 
 with st.sidebar:
     
-    selected = option_menu('Sistema de predicción de enfermedades múltiples',
-                           ['Predicción de diabetes',
+    selected = option_menu('Resultado Indicadores y Sistema de Predicción de Enfermedades',
+                           ['Indicadores de Calidad',
                             'Prediccion de enfermedades cardiacas',
-                            'Deteccion de Datos Anomalos',
-                            'Visualizar Datos en Tabla'],
-                           icons = ['activity','heart'],
+                            'Predicción de diabetes',
+                            'Modelo Construido Riesgo Cardiovascular',
+                            'Deteccion de Datos Anomalos'],
+                           icons = ['activity','heart','house','book'],
                            default_index = 0)
     
+
+
+#Prediccion con modelo construido con info de pacientes propios
+if(selected == 'Modelo Construido Riesgo Cardiovascular'):
+    
+    #Page title
+    st.title('Modelo Construido Riesgo Cardiovascular')   
+
+    # Para que funcione el selectbox se necesita de la funcion que esta arriba def format_func(option):
+    # return CHOICES[option]    
+    CHOICES = {1: "Hombre", 2: "Mujer"}
+    option = st.selectbox("Seleccione Sexo", options=list(CHOICES.keys()), format_func=format_func)
+    # st.write(option)
+    genero = option
+
+    Edad = st.text_input('Edad')
+
+    CHOICES = {1: "Si", 2: "No"}
+    option1 = st.selectbox("Realiza Actividad Fisica", options=list(CHOICES.keys()), format_func=format_func)
+    Fisica = option1
+     
+    CHOICES = {1: "Si", 2: "No"}
+    option2 = st.selectbox("Come Verduras y Frutas", options=list(CHOICES.keys()), format_func=format_func)
+    Verdufrutas = option2
+
+    CHOICES = {2: "No", 1: "Si"}
+    option3 = st.selectbox("Toma Medicamentos para la Hipertension Regularmente", options=list(CHOICES.keys()), format_func=format_func)
+    Medihiper = option3
+
+    CHOICES = {2: "No", 1: "Si"}
+    option4 = st.selectbox("Algunos Valores de Glucosa Altos", options=list(CHOICES.keys()), format_func=format_func)
+    Glucoaltos = option4
+
+    CHOICES = {2: "No", 1: "Si"}
+    option5 = st.selectbox("Diagnsotico Con Diabetes Algun Familiar", options=list(CHOICES.keys()), format_func=format_func)
+    Diagdiabfamili = option5
+    #Code for prediction
+    diab_diagnosis = ''
+    
+    #Creating a button for prediction    
+    if st.button('Resultado de Riesgo Cardio Vascular Modelo Creado'):
+        diab_prediction = riesgocardio_model.predict([[genero, Edad, Fisica, Verdufrutas, Medihiper, Glucoaltos, Diagdiabfamili]])       
+        
+        if (diab_prediction!=1):
+            diab_diagnosis = diab_prediction    
+            
+    st.success(diab_diagnosis)
+    
+
+
     
 #Diabetes Prediction Page
 if(selected == 'Predicción de diabetes'):
@@ -73,10 +129,9 @@ if(selected == 'Predicción de diabetes'):
             diab_diagnosis = 'La persona no es diabética'
             
             
-    st.success(diab_diagnosis)
+    st.success(diab_diagnosis)  
     
-    
-    
+
             
 #Heart Disease Prediction Page
 if(selected == 'Prediccion de enfermedades cardiacas'):
@@ -127,15 +182,12 @@ if(selected == 'Deteccion de Datos Anomalos'):
     st.title('Deteccion de Datos Anomalos - Con Bosques de Aislamiento (Iforests)')
     
     # Cargar datos
-    carros = np.loadtxt("carros_usados.csv", delimiter=",")
-
-    # data= pickle.load(open('diabetes_model.sav','rb'))
-    # st.write(data.head())
+    carros = np.loadtxt("deteccion_anomalos.csv", skiprows=1, usecols=(1, 2), delimiter=",")
 
     resultados = np.zeros((3, carros.size//2))
 
     # Bosques de Aislamiento con diferente contaminación
-    c = [0.05, 0.1] 
+    c = [0.05, 0.04] 
     for i in range(len(c)):
         modelo = IsolationForest(contamination=c[i]).fit(carros)
         resultados[i] = modelo.predict(carros)
@@ -149,14 +201,14 @@ if(selected == 'Deteccion de Datos Anomalos'):
         ax = fig.add_subplot(1, 3, i+1)
         ax.scatter(carros[resultados[i]==-1][:, 0], 
                 carros[resultados[i]==-1][:, 1], 
-                c="skyblue", marker="s", s=500)
+                c="skyblue", marker="s", s=900)
         ax.scatter(carros[:, 0], 
                 carros[:, 1], 
                 c=range(carros.size//2), marker="x",
-                s=500, alpha=0.6)
-        ax.set_title("Contaminación: %0.2f" % c[i], size=18, color="purple")
-        ax.set_ylabel("Precio ($)", size=10)
-        ax.set_xlabel("Kms recorridos", size=14)
+                s=900, alpha=0.1)
+        ax.set_title("Contaminación: %0.2f" % c[i], size=12, color="purple")
+        ax.set_ylabel("Oportunidad", size=10)
+        ax.set_xlabel("Meses", size=10)
 
     st.pyplot(fig)
 
@@ -165,31 +217,37 @@ if(selected == 'Deteccion de Datos Anomalos'):
 
 
 #Parkinsons Prediction Page
-if(selected == 'Visualizar Datos en Tabla'):
+if(selected == 'Indicadores de Calidad'):
     
     #Page title
-    st.title('Visualizar Datos en Tabla')   
+    st.title('Resultado Indicadores de Calidad')   
 
     # ---- READ EXCEL ----
   
     df = pd.read_csv("oportunidadstreamlit.csv")
     
     st.sidebar.header("Favor Filtrar:")
-    ips = st.sidebar.multiselect(
+    ips = st.sidebar.selectbox(
     "Seleccione IPS:",
     options=df["NOMBREIPS"].unique(),
-    default=df["NOMBREIPS"].unique()
+    help="Seleccione Sede",  
     )
 
     mes = st.sidebar.multiselect(
     "Seleccione Mes:",
     options=df["MES"].unique(),
     default=df["MES"].unique()
-    )
+)
 
+
+    servicio = st.sidebar.multiselect(
+    "Seleccione Servicio:",
+    options=df["SERVICIO"].unique(),
+    default=df["SERVICIO"].unique()
+)
 
     df_selection = df.query(
-    "NOMBREIPS == @ips & MES == @mes"
+    "NOMBREIPS == @ips & MES == @mes & SERVICIO == @servicio"
     )
 
     # st.dataframe(df_selection)
@@ -204,8 +262,9 @@ if(selected == 'Visualizar Datos en Tabla'):
 
     left_column, middle_column, right_column = st.columns(3)
     with left_column:
-        st.subheader("Total Registros:")
-        st.subheader(f"{total_sales:,}")
+        # st.subheader("Total Registros:")
+        # st.subheader(f"{total_sales:,}")
+        st.metric(label="Total Registros:",value=f"{total_sales:,.0f}")
     # with middle_column:
     #     st.subheader("Average Rating:")
     #     st.subheader(f"{average_rating} {star_rating}")
@@ -237,4 +296,4 @@ if(selected == 'Visualizar Datos en Tabla'):
     with col1:
       st.dataframe(df_selection)
     with col2:
-       fig_product_sales       
+       fig_product_sales
