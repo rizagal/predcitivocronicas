@@ -50,7 +50,7 @@ with st.sidebar:
                            ['Indicadores de Calidad',
                             'Prediccion de enfermedades cardiacas',
                             'Predicción de diabetes',
-                            'Modelo Construido Riesgo Cardiovascular.',
+                            'Modelo Construido Riesgo Cardiovascular',
                             'Deteccion de Datos Anomalos',
                             'Cuerpo Humano Interactivo'],
                            icons = ['activity','heart','house','book','pen','person'],
