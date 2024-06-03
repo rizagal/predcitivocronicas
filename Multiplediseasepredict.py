@@ -310,6 +310,6 @@ if(selected == 'Indicadores de Calidad'):
        fig_product_sales
 
 if(selected == 'Cuerpo Humano Interactivo'):
-    components.iframe("http://ideabien-001-site2.atempurl.com/", height=900, width=500)
+    components.iframe("https://www.google.com/", height=900, width=500)
 
 
