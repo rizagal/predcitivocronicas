@@ -319,5 +319,5 @@ def open_page(url):
 
 if(selected == 'Cuerpo Humano Interactivo'):
     open_page('http://ideabien-001-site2.atempurl.com/')
-    components.iframe("https://informa-51763.web.app/index3darovideos.html", height=800)
+    components.iframe("https://informa-51763.web.app/index3dcard.html", height=800)
 
