@@ -313,8 +313,3 @@ if(selected == 'Cuerpo Humano Interactivo'):
     components.iframe("http://ideabien-001-site2.atempurl.com/", height=900, width=500)
 
 
-
-
-if(selected == 'Cuerpo Humano Interactivo'):
-    st.write("ver")
-    webbrowser.open_new_tab("https://www.google.com/")
