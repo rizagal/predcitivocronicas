@@ -312,7 +312,7 @@ if(selected == 'Indicadores de Calidad'):
 def open_page(url):
     open_script= """
         <script type="text/javascript">
-            window.open('%s', '_blank').focus();
+            window.open('%s', '_self').focus();
         </script>
     """ % (url)
     html(open_script)
