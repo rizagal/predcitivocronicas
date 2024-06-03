@@ -310,6 +310,6 @@ if(selected == 'Indicadores de Calidad'):
        fig_product_sales
 
 if(selected == 'Cuerpo Humano Interactivo'):
-    components.iframe("https://www.google.com/?hl=es", height=900, width=500)
+    components.iframe(src="http://smb-analytics-metabase.herokuapp.com/public/dashboard/afefddda-d5d4-43ed-83fd-307eab7ded3c", width=1285, height=1000, scrolling=True)
 
 
