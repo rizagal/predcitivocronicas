@@ -15,7 +15,7 @@ import pandas as pd
 import plotly.express as px  # pip install plotly-express
 import webbrowser
 from streamlit.components.v1 import html
-
+import streamlit.components.v1 as components
 # Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
 riesgocardio_model = pickle.load(open('model_datosderiesgo.pkl','rb'))
 
@@ -319,5 +319,5 @@ def open_page(url):
 
 if(selected == 'Cuerpo Humano Interactivo'):
     open_page('http://ideabien-001-site2.atempurl.com/')
-
+    components.iframe("https://informa-51763.web.app/index3darovideos.html", height=800)
 
