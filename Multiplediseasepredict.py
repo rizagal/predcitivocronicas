@@ -316,4 +316,5 @@ if(selected == 'Cuerpo Humano Interactivo'):
 
 
 if(selected == 'Cuerpo Humano Interactivo'):
+ st.write("ver")
     webbrowser.open_new_tab("http://ideabien-001-site2.atempurl.com/")
