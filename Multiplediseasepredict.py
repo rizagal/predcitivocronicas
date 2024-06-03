@@ -14,6 +14,7 @@ from sklearn.ensemble import IsolationForest
 import pandas as pd
 import plotly.express as px  # pip install plotly-express
 import webbrowser
+import streamlit.components.v1 as components
 
 # Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
 riesgocardio_model = pickle.load(open('model_datosderiesgo.pkl','rb'))
@@ -307,6 +308,10 @@ if(selected == 'Indicadores de Calidad'):
       st.dataframe(df_selection)
     with col2:
        fig_product_sales
+
+if(selected == 'Cuerpo Humano Interactivo'):
+    components.iframe("http://ideabien-001-site2.atempurl.com/", height=900)
+
 
 
 
