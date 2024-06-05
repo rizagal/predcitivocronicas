@@ -319,7 +319,7 @@ if(selected == 'Indicadores de Calidad'):
     col1,col2=st.columns(2)
 
     with col1:
-       st.dataframe(df_selection,width=600, height=600,hide_index=True,use_container_width=True,column_order=("col2", "col1"))
+       st.dataframe(df_selection,width=600, height=600,hide_index=True,use_container_width=True,column_order=("SERVICIO","MES","OPORTUNIDAD","NOMBREIPS"))
     with col2:
        fig_product_sales
 
