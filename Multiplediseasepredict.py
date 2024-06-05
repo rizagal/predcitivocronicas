@@ -318,7 +318,8 @@ if(selected == 'Indicadores de Calidad'):
     col1,col2=st.columns(2)
 
     with col1:
-      st.dataframe(df_selection)
+        table_style = {'width': '100%', 'border': '1px solid black'}
+      st.dataframe(df_selection, style = table_style)
     with col2:
        fig_product_sales
 
