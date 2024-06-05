@@ -31,6 +31,19 @@ st.set_page_config(page_title="Resultado Indicadores y Sistema de predicción de
 #remove default theme
 theme_plotly = None # None or streamlit
 
+st.markdown("""
+<style>
+
+.block-container
+{
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+    margin-top: 1rem;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
  
 # CSS Style
 with open('style.css')as f:
