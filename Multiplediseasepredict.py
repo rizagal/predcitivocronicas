@@ -16,6 +16,20 @@ import plotly.express as px  # pip install plotly-express
 import webbrowser
 from streamlit.components.v1 import html
 import streamlit.components.v1 as components
+from streamlit_js_eval import streamlit_js_eval
+st.write(f"Screen width is {streamlit_js_eval(js_expressions='screen.width', key = 'SCR')}")
+
+
+# Save viewport width to session state
+st.session_state["viewport_width"] = streamlit_js_eval(
+    js_expressions="window.innerWidth", key="ViewportWidth"
+)
+
+# Calculate width and height based on viewport width
+width = st.session_state["viewport_width"] * 0.75
+height = width * 3 / 5
+
+
 # Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
 riesgocardio_model = pickle.load(open('model_datosderiesgo.pkl','rb'))
 
@@ -318,8 +332,7 @@ if(selected == 'Indicadores de Calidad'):
     col1,col2=st.columns(2)
 
     with col1:
-      table_style = {'width': '100%', 'border': '1px solid black'}
-      st.table(df_selection, style = table_style)
+       st.dataframe(df_selection)
     with col2:
        fig_product_sales
 
