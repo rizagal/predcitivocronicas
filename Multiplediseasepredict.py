@@ -16,19 +16,6 @@ import plotly.express as px  # pip install plotly-express
 import webbrowser
 from streamlit.components.v1 import html
 import streamlit.components.v1 as components
-from streamlit_js_eval import streamlit_js_eval
-st.write(f"Screen width is {streamlit_js_eval(js_expressions='screen.width', key = 'SCR')}")
-
-
-# Save viewport width to session state
-st.session_state["viewport_width"] = streamlit_js_eval(
-    js_expressions="window.innerWidth", key="ViewportWidth"
-)
-
-# Calculate width and height based on viewport width
-width = st.session_state["viewport_width"] * 0.75
-height = width * 3 / 5
-
 
 # Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
 riesgocardio_model = pickle.load(open('model_datosderiesgo.pkl','rb'))
@@ -40,7 +27,7 @@ heart_disease_model = pickle.load(open('heart_disease_model.sav','rb'))
 parkinsons_model = pickle.load(open('parkinsons_model.sav','rb'))
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
-st.set_page_config(page_title="Resultado Indicadores y Sistema de predicción de enfermedades", page_icon=":bar_chart:", layout="wide")
+st.set_page_config(page_title="Resultado Indicadores y Sistema de predicción de enfermedades", page_icon=":bar_chart:", layout="default")
 
 #remove default theme
 theme_plotly = None # None or streamlit
