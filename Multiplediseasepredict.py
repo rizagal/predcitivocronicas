@@ -319,7 +319,7 @@ if(selected == 'Indicadores de Calidad'):
 
     with col1:
       table_style = {'width': '100%', 'border': '1px solid black'}
-     st.table(df_selection, style = table_style)
+      st.table(df_selection, style = table_style)
     with col2:
        fig_product_sales
 
