@@ -4,17 +4,16 @@ Para empezar un Indicador es una expresion matematica que permite evaluar el com
 
 ## **Cuales son los tipos de Indicadores que podemos usar?**
 - Razon. 
-- Proporcion.
+- Proporción
 - Promedio
 - Indice
 - Tasa
 
-## **Crear un nuevo entorno conda**
-Una vez que haz instalado conda, comencemos creando un entorno para gestionar todas las dependencias de la librería Python.
+## **Por qué es importante medir?**
 
-Para crear un nuevo entorno con Python 3.9, ejecute lo siguiente:
+## **Medir el Desempeño**
 ```bash
-conda create -n stenv python=3.9
+Permite conocer las desviaciones de manera precisa y tangible frente a las metas propuestas y facilita conocer sus causas.
 ```
 
 donde `create -n stenv` va a crear un entorno conda llamado `stenv` y `python=3.9` va a especificar que se utilice la version 3.9 de Python en el entorno conda.
