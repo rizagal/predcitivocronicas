@@ -44,7 +44,6 @@ st.markdown("""
 
 </style>
 """, unsafe_allow_html=True)
-
  
 # CSS Style
 with open('style.css')as f:
@@ -62,12 +61,13 @@ with st.sidebar:
     
     selected = option_menu('Resultado Indicadores y Sistema de Predicción de Enfermedades',
                            ['Indicadores de Calidad',
+                            'Importancia de los Indicadores',
                             'Prediccion de enfermedades cardiacas',
                             'Predicción de diabetes',
                             'Modelo Construido Riesgo Cardiovascular',
                             'Deteccion de Datos Anomalos',
-                            'Cuerpo Humano Interactivo'],
-                           icons = ['activity','heart','house','book','pen','person'],
+                            ],
+                           icons = ['activity','pen','house','book','heart','person'],
                            default_index = 0)
    
 
@@ -76,7 +76,7 @@ with st.sidebar:
 if(selected == 'Modelo Construido Riesgo Cardiovascular'):
     
     #Page title
-    st.title('Modelo Construido Riesgo Cardiovascular')   
+    st.title('Modelo Construido de Arbol de Decision (sklearn) Riesgo Cardiovascular')   
 
     # Para que funcione el selectbox se necesita de la funcion que esta arriba def format_func(option):
     # return CHOICES[option]    
@@ -236,6 +236,10 @@ if(selected == 'Deteccion de Datos Anomalos'):
     st.pyplot(fig)
 
 
+def color_negative_red(s):
+
+    is_max = s == s.min()
+    return ['background-color: yellow' if v else '' for v in is_max]
 
 
 
@@ -304,7 +308,8 @@ if(selected == 'Indicadores de Calidad'):
         sales_by_product_line,
         x="OPORTUNIDAD",
         y=sales_by_product_line.index,
-        orientation="h",
+        orientation="h",        
+        text="OPORTUNIDAD",
         title="<b>Consolidado Oportunidad por Servicio Durante los Meses Seleccionados</b>",
         color_discrete_sequence=["#0083B8"] * len(sales_by_product_line),
         template="plotly_white",
@@ -313,14 +318,29 @@ if(selected == 'Indicadores de Calidad'):
         plot_bgcolor="rgba(0,0,0,0)",
         xaxis=(dict(showgrid=False))
     )
-
-   
-
+    fig_product_sales.update_traces(textposition="outside")
+    
     col1,col2=st.columns(2)
 
     with col1:
-       st.dataframe(df_selection,width=600, height=600,hide_index=True,use_container_width=True,column_order=("SERVICIO","MES","OPORTUNIDAD","NOMBREIPS"))
+       st.dataframe(df_selection.style.apply(color_negative_red, subset=['MES']).format({"OPORTUNIDAD": "{:.2}"}),hide_index=True,use_container_width=True,column_order=("SERVICIO","MES","OPORTUNIDAD","NOMBREIPS"))
+   
+        
     with col2:
+       
+        fig = px.line(df_selection, x='MES', y='OPORTUNIDAD', color='SERVICIO', text="OPORTUNIDAD", markers=True, title="<b>Oportunidad por Meses de la IPS y los Servicios Seleccionados</b>")
+        fig.update_layout(
+        plot_bgcolor="rgba(0,0,0,0)",
+        xaxis=(dict(showgrid=False))
+        )
+        fig.update_traces(textposition="top center")
+        fig    
+       
+
+
+
+    col1,col2=st.columns(2)
+    with col1:     
        fig_product_sales
 
 def open_page(url):
@@ -331,7 +351,22 @@ def open_page(url):
     """ % (url)
     html(open_script)
 
-if(selected == 'Cuerpo Humano Interactivo'):
-    open_page('http://ideabien-001-site2.atempurl.com/')
-    components.iframe("https://informa-51763.web.app/index3dcardesml.html", height=700)
+
+
+if(selected == 'Importancia de los Indicadores'):
+    
+    # open_page('http://ideabien-001-site2.atempurl.com/')
+    # components.iframe("https://informa-51763.web.app/index3dcardesml.html", height=500)
+    with st.expander("Acerca de #30DaysOfStreamlit"):
+        st.markdown('''
+        **#30DaysOfStreamlit** es un desafío diseñado para ayudarlo a comenzar a crear aplicaciones Streamlit.
+        
+        En particular, podrás:
+        - Configure un entorno de desarrollo para construir aplicaciones Streamlit
+        - Construir tu primer aplicación Streamlit
+        - Aprender acerca de todos los sorprendentes componentes para usar en tu aplicación Streamlit
+        ''')
+    with open(f'contenido1.md', 'r') as f:
+        st.markdown(f.read())
+        st.image(f'SIGES17.png')
 
