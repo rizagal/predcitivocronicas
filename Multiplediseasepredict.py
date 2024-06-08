@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Feb  7 20:12:12 2023
+Creado a partir del 1 de Mayo 2024
 
-@author: Admin
+@author: RZ
 """
+
 
 import pickle
 import streamlit as st
