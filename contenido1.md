@@ -31,7 +31,6 @@ La medicion facilita el desarrollo de una cultura institucional del mejoramiento
 ```
 
 ## **Recordemos Definiciones**
-Nos permite analizar cuan bien se está administrando
 ```bash
-Importante
+Nos permite analizar cuan bien se está administrando
 ```
