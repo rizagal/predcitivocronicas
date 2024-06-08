@@ -328,7 +328,7 @@ if(selected == 'Indicadores de Calidad'):
         
     with col2:
        
-        fig = px.line(df_selection, x='MES', y='OPORTUNIDAD', color='SERVICIO', text="OPORTUNIDAD", markers=True, title="<b>Oportunidad por Meses de la IPS y los Servicios Seleccionados</b>")
+        fig = px.line(df_selection, x='MES', y='OPORTUNIDAD', color='SERVICIO', text="OPORTUNIDAD", markers=True, title="<b>Oportunidad de la IPS en los Servicios y Meses Seleccionados</b>")
         fig.update_layout(
         plot_bgcolor="rgba(0,0,0,0)",
         xaxis=(dict(showgrid=False))
