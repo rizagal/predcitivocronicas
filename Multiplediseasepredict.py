@@ -352,7 +352,7 @@ if(selected == 'Indicadores de Calidad'):
         xaxis=(dict(showgrid=False))
         )
         fig.update_traces(textposition="inside")
-        fig.update_layout(title_text='Oportunidad Detallada', title_x=0.3)        
+        fig.update_layout(title_text='Oportunidad de Todas las IPS y Servicios', title_x=0.3)        
         fig    
 
 
