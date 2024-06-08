@@ -17,7 +17,7 @@ import webbrowser
 from streamlit.components.v1 import html
 import streamlit.components.v1 as components
 
-# Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
+#  Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
 riesgocardio_model = pickle.load(open('model_datosderiesgo.pkl','rb'))
 
 diabetes_model = pickle.load(open('diabetes_model.sav','rb'))
@@ -59,8 +59,8 @@ def format_func(option):
 
 with st.sidebar:
     
-    selected = option_menu('Resultado Indicadores y Sistema de Predicción de Enfermedades',
-                           ['Indicadores de Calidad',
+    selected = option_menu('Indicadores de Calidad y Sistema de Predicción de Enfermedades',
+                           ['Consulta Resultado Indicadores de Calidad',
                             'Importancia de los Indicadores',
                             'Prediccion de enfermedades cardiacas',
                             'Predicción de diabetes',
@@ -244,10 +244,10 @@ def color_negative_red(s):
 
 
 #Parkinsons Prediction Page
-if(selected == 'Indicadores de Calidad'):
+if(selected == 'Consulta Resultado Indicadores de Calidad'):
     
     #Page title
-    st.title('Resultado Indicadores de Calidad')   
+    st.title('Resultado Indicadores de Calidad Red de Salud de Ladera E.S.E')   
 
     # ---- READ EXCEL ----
   
@@ -323,7 +323,7 @@ if(selected == 'Indicadores de Calidad'):
     col1,col2=st.columns(2)
 
     with col1:
-       st.dataframe(df_selection.style.apply(color_negative_red, subset=['MES']).format({"OPORTUNIDAD": "{:.2}"}),hide_index=True,use_container_width=True,column_order=("SERVICIO","MES","OPORTUNIDAD","NOMBREIPS"))
+       st.dataframe(df_selection.style.apply(color_negative_red, subset=['MES']).format({"OPORTUNIDAD": "{:.3}"}),hide_index=True,use_container_width=True,column_order=("SERVICIO","MES","OPORTUNIDAD","NOMBREIPS"))
    
         
     with col2:
@@ -334,7 +334,7 @@ if(selected == 'Indicadores de Calidad'):
         xaxis=(dict(showgrid=False))
         )
         fig.update_traces(textposition="top center")        
-        fig.update_layout(title_text='Oportunidad por Meses de la IPS y los Servicios Seleccionados', title_x=0.1)   
+        fig.update_layout(title_text='Oportunidad de la IPS por Meses y Servicios Seleccionados', title_x=0.1)   
         fig    
        
 
@@ -382,4 +382,3 @@ if(selected == 'Importancia de los Indicadores'):
     with open(f'contenido1.md', 'r') as f:
         st.markdown(f.read())
         st.image(f'razonindicadores.png')
-
