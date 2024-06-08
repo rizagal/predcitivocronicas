@@ -17,26 +17,7 @@ import webbrowser
 from streamlit.components.v1 import html
 import streamlit.components.v1 as components
 
-from streamlit import runtime
-from streamlit.runtime.scriptrunner import get_script_run_ctx
 
-def get_remote_ip() -> str:
-    """Get remote ip."""
-
-    try:
-        ctx = get_script_run_ctx()
-        if ctx is None:
-            return None
-
-        session_info = runtime.get_instance().get_client(ctx.session_id)
-        if session_info is None:
-            return None
-    except Exception as e:
-        return None  
-    return session_info.request.remote_ip
-
-st.title("Title")
-st.markdown(f"The remote ip is {get_remote_ip()}")
 
 # Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
 riesgocardio_model = pickle.load(open('model_datosderiesgo.pkl','rb'))
