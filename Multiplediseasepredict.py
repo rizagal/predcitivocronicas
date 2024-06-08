@@ -27,7 +27,7 @@ heart_disease_model = pickle.load(open('heart_disease_model.sav','rb'))
 parkinsons_model = pickle.load(open('parkinsons_model.sav','rb'))
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
-st.set_page_config(page_title="Resultado Indicadores y Sistema de predicción de enfermedades", page_icon=":bar_chart:", layout="wide")
+st.set_page_config(page_title="Resultado Indicadores y Sistema de Predicción de Enfermedades", page_icon=":bar_chart:", layout="wide")
 
 #remove default theme
 theme_plotly = None # None or streamlit
@@ -323,7 +323,7 @@ if(selected == 'Consulta Resultado Indicadores de Calidad'):
     col1,col2=st.columns(2)
 
     with col1:
-       st.dataframe(df_selection.style.apply(color_negative_red, subset=['MES']).format({"OPORTUNIDAD": "{:.3}"}),hide_index=True,use_container_width=True,column_order=("SERVICIO","MES","OPORTUNIDAD","NOMBREIPS"))
+       st.dataframe(df_selection.style.apply(color_negative_red, subset=['MES']).format({"OPORTUNIDAD": "{:.3}"}),hide_index=True,height=450,use_container_width=True,column_order=("SERVICIO","MES","OPORTUNIDAD","NOMBREIPS"))
    
         
     with col2:
