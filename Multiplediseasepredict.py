@@ -17,8 +17,6 @@ import webbrowser
 from streamlit.components.v1 import html
 import streamlit.components.v1 as components
 
-
-
 # Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
 riesgocardio_model = pickle.load(open('model_datosderiesgo.pkl','rb'))
 
@@ -69,7 +67,7 @@ with st.sidebar:
                             'Modelo Construido Riesgo Cardiovascular',
                             'Deteccion de Datos Anomalos',
                             ],
-                           icons = ['activity','pen','house','book','heart','person'],
+                           icons = ['activity','pen','person','book','heart','house'],
                            default_index = 0)
    
 
@@ -311,8 +309,7 @@ if(selected == 'Indicadores de Calidad'):
         x="OPORTUNIDAD",
         y=sales_by_product_line.index,
         orientation="h",        
-        text="OPORTUNIDAD",
-        title="<b>Consolidado Oportunidad por Servicio Durante los Meses Seleccionados</b>",
+        text="OPORTUNIDAD",        
         color_discrete_sequence=["#0083B8"] * len(sales_by_product_line),
         template="plotly_white",
     )
@@ -321,6 +318,7 @@ if(selected == 'Indicadores de Calidad'):
         xaxis=(dict(showgrid=False))
     )
     fig_product_sales.update_traces(textposition="outside")
+    fig_product_sales.update_layout(title_text='Consolidado Oportunidad por Servicio Durante los Meses Seleccionados', title_x=0.1)    
     
     col1,col2=st.columns(2)
 
@@ -330,12 +328,13 @@ if(selected == 'Indicadores de Calidad'):
         
     with col2:
        
-        fig = px.line(df_selection, x='MES', y='OPORTUNIDAD', color='SERVICIO', text="OPORTUNIDAD", markers=True, title="<b>Oportunidad de la IPS en los Servicios y Meses Seleccionados</b>")
+        fig = px.line(df_selection, x='MES', y='OPORTUNIDAD', color='SERVICIO', text="OPORTUNIDAD", markers=True)
         fig.update_layout(
         plot_bgcolor="rgba(0,0,0,0)",
         xaxis=(dict(showgrid=False))
         )
-        fig.update_traces(textposition="top center")
+        fig.update_traces(textposition="top center")        
+        fig.update_layout(title_text='Oportunidad por Meses de la IPS y los Servicios Seleccionados', title_x=0.1)   
         fig    
        
 
@@ -344,6 +343,18 @@ if(selected == 'Indicadores de Calidad'):
     col1,col2=st.columns(2)
     with col1:     
        fig_product_sales
+
+    with col2:
+ 
+        fig = px.bar(df, x='OPORTUNIDAD', y='NOMBREIPS', color='SERVICIO', text="OPORTUNIDAD", orientation="h")
+        fig.update_layout(
+        plot_bgcolor="rgba(0,0,0,0)",
+        xaxis=(dict(showgrid=False))
+        )
+        fig.update_traces(textposition="inside")
+        fig.update_layout(title_text='Oportunidad Detallada', title_x=0.3)        
+        fig    
+
 
 def open_page(url):
     open_script= """
@@ -359,6 +370,15 @@ if(selected == 'Importancia de los Indicadores'):
     
     # open_page('http://ideabien-001-site2.atempurl.com/')
     # components.iframe("https://informa-51763.web.app/index3dcardesml.html", height=500)
+    # with st.expander("Acerca de #30DaysOfStreamlit"):
+    #     st.markdown('''
+    #     **#30DaysOfStreamlit** es un desafío diseñado para ayudarlo a comenzar a crear aplicaciones Streamlit.
+        
+    #     En particular, podrás:
+    #     - Configure un entorno de desarrollo para construir aplicaciones Streamlit
+    #     - Construir tu primer aplicación Streamlit
+    #     - Aprender acerca de todos los sorprendentes componentes para usar en tu aplicación Streamlit
+    #     ''')
     with open(f'contenido1.md', 'r') as f:
         st.markdown(f.read())
         st.image(f'razonindicadores.png')
