@@ -368,5 +368,5 @@ if(selected == 'Importancia de los Indicadores'):
         ''')
     with open(f'contenido1.md', 'r') as f:
         st.markdown(f.read())
-        st.image(f'SIGES17.png')
+        st.image(f'razonindicadores.png')
 
