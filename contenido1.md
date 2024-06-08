@@ -11,26 +11,23 @@ Para empezar un Indicador es una expresion matematica que permite evaluar el com
 
 ## **Por qué es importante medir?**
 
-## **Medir el Desempeño**
+### **Medir el Desempeño**
 ```bash
 Permite conocer las desviaciones de manera precisa y tangible frente a las metas propuestas y facilita conocer sus causas.
 ```
-
-donde `create -n stenv` va a crear un entorno conda llamado `stenv` y `python=3.9` va a especificar que se utilice la version 3.9 de Python en el entorno conda.
-
-## **Activar el entorno conda**
-
-Para utilizar el entorno conda llamado `stenv` que acabamos de crear, ejecute lo siguiente en su terminal:
-
+### **Tomar Decisiones**
 ```bash
-conda activate stenv
+Los resultados del sistema de medición deben ser una entrada para la toma de decisiones y los procesos de mejoramiento institucional.
 ```
 
-## **Instalar la librería Streamlit**
-
-Es tiempo de instalar la librería `streamlit`:
+### **Compararnos**
 ```bash
-pip install streamlit
+Los Indicadores nos Permite comparar los resultados, para evaluar si somos eficientes, eficaces y efectivos.
+```
+
+### **Generar Cultura**
+```bash
+La medicion facilita el desarrollo de una cultura institucional del mejoramiento basado en hechos y datos.
 ```
 
 ## **Ejecutar la aplicación demo de Streamlit**
