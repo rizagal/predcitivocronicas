@@ -357,15 +357,6 @@ if(selected == 'Importancia de los Indicadores'):
     
     # open_page('http://ideabien-001-site2.atempurl.com/')
     # components.iframe("https://informa-51763.web.app/index3dcardesml.html", height=500)
-    with st.expander("Acerca de #30DaysOfStreamlit"):
-        st.markdown('''
-        **#30DaysOfStreamlit** es un desafío diseñado para ayudarlo a comenzar a crear aplicaciones Streamlit.
-        
-        En particular, podrás:
-        - Configure un entorno de desarrollo para construir aplicaciones Streamlit
-        - Construir tu primer aplicación Streamlit
-        - Aprender acerca de todos los sorprendentes componentes para usar en tu aplicación Streamlit
-        ''')
     with open(f'contenido1.md', 'r') as f:
         st.markdown(f.read())
         st.image(f'razonindicadores.png')
