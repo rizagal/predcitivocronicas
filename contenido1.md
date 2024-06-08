@@ -30,8 +30,8 @@ Los Indicadores nos Permite comparar los resultados, para evaluar si somos efici
 La medicion facilita el desarrollo de una cultura institucional del mejoramiento basado en hechos y datos.
 ```
 
-## **Ejecutar la aplicación demo de Streamlit**
-Para ejecutar la aplicación demo (Figura 1) ingrese:
+## **Recordemos Definiciones**
+Nos permite analizar cuan bien se está administrando
 ```bash
-streamlit hello
+Importante
 ```
