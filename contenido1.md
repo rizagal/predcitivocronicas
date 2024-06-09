@@ -33,7 +33,7 @@ La medicion facilita el desarrollo de una cultura institucional del mejoramiento
 ## Video Tutorial Indicadores Dimension Calidad
 [![YouTube Video](https://raw.githubusercontent.com/rizagal/predcitivocronicas/main/indicadoresdimcalidad.jpg)](https://www.youtube.com/watch?v=cUw-rOYt1pE&t=58s)
 
-## **Recordemos Definiciones**
+## **💡 Recordemos Definiciones**
 ```bash
 Nos permite analizar cuan bien se está administrando
 ```
