@@ -31,7 +31,7 @@ La medicion facilita el desarrollo de una cultura institucional del mejoramiento
 ```
 
 ## Video Tutorial
-[![YouTube Video](https://raw.githubusercontent.com/rizagal/predcitivocronicas/main/indicadoresdimcalidad.jpg)](indicadores.mp4)
+[![YouTube Video](https://raw.githubusercontent.com/rizagal/predcitivocronicas/main/indicadoresdimcalidad.jpg)](https://www.youtube.com/watch?v=cUw-rOYt1pE&t=58s)
 
 ## **Recordemos Definiciones**
 ```bash
