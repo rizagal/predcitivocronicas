@@ -9,7 +9,7 @@ Para empezar un Indicador es una expresion matematica que permite evaluar el com
 - Indice
 - Tasa
 
-## **Por qué es importante medir?**
+## **👉 Por qué es importante medir?**
 
 ### **Medir el Desempeño**
 ```bash
@@ -29,6 +29,9 @@ Los Indicadores nos Permite comparar los resultados, para evaluar si somos efici
 ```bash
 La medicion facilita el desarrollo de una cultura institucional del mejoramiento basado en hechos y datos.
 ```
+
+## Video Tutorial
+[![YouTube Video](indicadoresdimcalidad.jpg)](https://youtu.be/YClmpnpszq8)
 
 ## **Recordemos Definiciones**
 ```bash
