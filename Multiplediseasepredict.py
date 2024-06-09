@@ -383,3 +383,6 @@ if(selected == 'Importancia de los Indicadores'):
     with open(f'contenido1.md', 'r') as f:
         st.markdown(f.read())
         st.image(f'razonindicadores.png')
+        with st.expander("💡 Video Tutorial de Indicadores"):
+            with st.spinner("Cargando video"):
+                st.video("indicadores.mp4", format="video/mp4", start_time=0)
