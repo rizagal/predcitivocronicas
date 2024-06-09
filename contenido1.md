@@ -27,7 +27,7 @@ Los Indicadores nos Permite comparar los resultados, para evaluar si somos efici
 
 ### **Generar Cultura**
 ```bash
-La medicion facilita el desarrollo de una cultura institucional del mejoramiento basado en hechos y datos.
+La medicion facilita el desarrollo de una `cultura institucional del mejoramiento basado en hechos y datos`.
 ```
 
 ## Video Tutorial Indicadores Dimension Calidad
