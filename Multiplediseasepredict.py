@@ -19,6 +19,7 @@ from streamlit.components.v1 import html
 
 
 
+
 # Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
 riesgocardio_model = pickle.load(open('model_datosderiesgo.pkl','rb'))
 
@@ -64,8 +65,8 @@ with st.sidebar:
     selected = option_menu('Indicadores de Calidad y Sistema de Predicción de Enfermedades',
                            ['Consulta Resultado Indicadores de Calidad',
                             'Importancia de los Indicadores',
-                            'Prediccion de enfermedades cardiacas',
-                            'Predicción de diabetes',
+                            'Prediccion de Enfermedades Cardiacas',
+                            'Predicción de Diabetes',
                             'Modelo Construido Riesgo Cardiovascular',
                             'Deteccion de Datos Anomalos',
                             ],
@@ -124,7 +125,7 @@ if(selected == 'Modelo Construido Riesgo Cardiovascular'):
 
     
 #Diabetes Prediction Page
-if(selected == 'Predicción de diabetes'):
+if(selected == 'Predicción de Diabetes'):
     
     #Page title
     st.title('Predicción de diabetes mediante ML')
@@ -159,7 +160,7 @@ if(selected == 'Predicción de diabetes'):
 
             
 #Heart Disease Prediction Page
-if(selected == 'Prediccion de enfermedades cardiacas'):
+if(selected == 'Prediccion de Enfermedades Cardiacas'):
     
     #Page title
     st.title('Prediccion de enfermedades cardiacas usando ML')
