@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Creado a partir del 1 de Mayo 2024
+Creado a partir del 1 de Junio 2024
 
 @author: RZ
-"""
 
+https://icons.getbootstrap.com/
+"""
 
 import pickle
 import streamlit as st
@@ -14,11 +15,11 @@ import matplotlib.pyplot as plt
 from sklearn.ensemble import IsolationForest
 import pandas as pd
 import plotly.express as px  # pip install plotly-express
-import webbrowser
 from streamlit.components.v1 import html
-import streamlit.components.v1 as components
 
-#  Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
+
+
+# Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
 riesgocardio_model = pickle.load(open('model_datosderiesgo.pkl','rb'))
 
 diabetes_model = pickle.load(open('diabetes_model.sav','rb'))
@@ -77,7 +78,7 @@ with st.sidebar:
 if(selected == 'Modelo Construido Riesgo Cardiovascular'):
     
     #Page title
-    st.title('Modelo Construido de Arbol de Decision (sklearn) Riesgo Cardiovascular')   
+    st.title('Modelo Construido con Arbol de Decision (sklearn) Riesgo Cardiovascular')   
 
     # Para que funcione el selectbox se necesita de la funcion que esta arriba def format_func(option):
     # return CHOICES[option]    
