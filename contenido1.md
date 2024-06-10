@@ -1,14 +1,15 @@
 # Que es un Indicador
-
+```bash
 Para empezar un Indicador es una expresion matematica que permite evaluar el comportamiento de una variable o caracteristica objeto de estudio.
-
+```
 ## **Cuales son los tipos de Indicadores que podemos usar?**
+```bash
 - Razon. 
 - Proporción
 - Promedio
 - Indice
 - Tasa
-
+```
 ## **👉 Por qué es importante medir?**
 
 ### **Medir el Desempeño**
