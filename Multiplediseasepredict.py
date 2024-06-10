@@ -240,8 +240,8 @@ if(selected == 'Deteccion de Datos Anomalos'):
 
 def color_negative_red(s):
 
-    is_max = s == s.min()
-    return ['background-color: yellow' if v else '' for v in is_max]
+    is_max = s == s.max()
+    return ['background-color: #e88868' if v else '' for v in is_max]
 
 
 
@@ -325,7 +325,7 @@ if(selected == 'Consulta Resultado Indicadores de Calidad'):
     col1,col2=st.columns(2)
 
     with col1:
-       st.dataframe(df_selection.style.apply(color_negative_red, subset=['MES']).format({"OPORTUNIDAD": "{:.3}"}),hide_index=True,height=450,use_container_width=True,column_order=("SERVICIO","MES","OPORTUNIDAD","NOMBREIPS"))
+       st.dataframe(df_selection.style.apply(color_negative_red, subset=['OPORTUNIDAD']).format({"OPORTUNIDAD": "{:.3}"}),hide_index=True,height=450,use_container_width=True,column_order=("SERVICIO","MES","OPORTUNIDAD","NOMBREIPS"))
    
         
     with col2:
