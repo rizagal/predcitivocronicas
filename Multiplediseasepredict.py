@@ -16,7 +16,7 @@ from sklearn.ensemble import IsolationForest
 import pandas as pd
 import plotly.express as px  # pip install plotly-express
 from streamlit.components.v1 import html
-
+from pygwalker.api.streamlit import StreamlitRenderer
 
 
 
