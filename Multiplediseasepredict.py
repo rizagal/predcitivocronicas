@@ -65,13 +65,13 @@ with st.sidebar:
     selected = option_menu('Indicadores de Calidad y Sistema de Predicción de Enfermedades',
                            ['Consulta Resultado Indicadores de Calidad',
                             'Importancia de los Indicadores',
-                            'Prediccion de Enfermedades Cardiacas',
+                            'Visualizacion de Servicios Habilitados por IPS - REPS',
                             'Predicción de Diabetes',
-                            'Modelo Construido Riesgo Cardiovascular',
-                            'Deteccion de Datos Anomalos',
-                            'Reporte Dinamico Registro de Prestacion de Salud',
+                            'Modelo Construido Riesgo Cardiovascular',                            
+                            'Prediccion de Enfermedades Cardiacas',
+                            'Deteccion de Datos Anomalos'
                             ],
-                           icons = ['activity','pen','person','book','heart','house'],
+                           icons = ['activity','pen','building','book','heart','clipboard','person'],
                            default_index = 0)
    
 
@@ -391,9 +391,9 @@ if(selected == 'Importancia de los Indicadores'):
                 st.video("indicadores.mp4", format="video/mp4", start_time=0)
 
 
-if(selected == 'Reporte Dinamico Registro de Prestacion de Salud'):
+if(selected == 'Visualizacion de Servicios Habilitados por IPS - REPS'):
      #Page title
-    st.title('Reporte Dinamico Registro de Prestacion de Salud - REPS') 
+    st.title('Visualizacion de Servicios Habilitados por IPS - REPS') 
     df = pd.read_csv("reps2024.csv")
-    pyg_app = StreamlitRenderer(df,spec="./bikes_chart.json")
+    pyg_app = StreamlitRenderer(df,spec="./spec/bikes_chart.json")
     pyg_app.explorer()
