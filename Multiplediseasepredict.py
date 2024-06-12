@@ -69,7 +69,7 @@ with st.sidebar:
                             'Predicción de Diabetes',
                             'Modelo Construido Riesgo Cardiovascular',
                             'Deteccion de Datos Anomalos',
-                            'Reporte Dinamico Registro de Prestacion de Salud ',
+                            'Reporte Dinamico Registro de Prestacion de Salud',
                             ],
                            icons = ['activity','pen','person','book','heart','house'],
                            default_index = 0)
