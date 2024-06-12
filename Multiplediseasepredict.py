@@ -18,8 +18,6 @@ import plotly.express as px  # pip install plotly-express
 from streamlit.components.v1 import html
 from pygwalker.api.streamlit import StreamlitRenderer
 
-
-
 # Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
 riesgocardio_model = pickle.load(open('model_datosderiesgo.pkl','rb'))
 
