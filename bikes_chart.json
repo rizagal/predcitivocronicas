@@ -1,0 +1,407 @@
+[
+  {
+    "config": {
+      "defaultAggregated": true,
+      "geoms": [
+        "auto"
+      ],
+      "coordSystem": "generic",
+      "limit": -1,
+      "timezoneDisplayOffset": 0
+    },
+    "encodings": {
+      "dimensions": [
+        {
+          "fid": "SEDE_NOMBRE",
+          "name": "SEDE_NOMBRE",
+          "basename": "SEDE_NOMBRE",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "CLPR_CODIGO",
+          "name": "CLPR_CODIGO",
+          "basename": "CLPR_CODIGO",
+          "semanticType": "quantitative",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "SERV_NOMBRE",
+          "name": "SERV_NOMBRE",
+          "basename": "SERV_NOMBRE",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "AMBULATORIO",
+          "name": "AMBULATORIO",
+          "basename": "AMBULATORIO",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "HOSPITALARIO",
+          "name": "HOSPITALARIO",
+          "basename": "HOSPITALARIO",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "UNIDAD_MOVIL",
+          "name": "UNIDAD_MOVIL",
+          "basename": "UNIDAD_MOVIL",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "DOMICILIARIO",
+          "name": "DOMICILIARIO",
+          "basename": "DOMICILIARIO",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "OTRAS_EXTRAMURAL",
+          "name": "OTRAS_EXTRAMURAL",
+          "basename": "OTRAS_EXTRAMURAL",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "CENTRO_REFERENCIA",
+          "name": "CENTRO_REFERENCIA",
+          "basename": "CENTRO_REFERENCIA",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "INSTITUCION_REMISORA",
+          "name": "INSTITUCION_REMISORA",
+          "basename": "INSTITUCION_REMISORA",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "COMPLEJIDAD_BAJA",
+          "name": "COMPLEJIDAD_BAJA",
+          "basename": "COMPLEJIDAD_BAJA",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "COMPLEJIDAD_MEDIA",
+          "name": "COMPLEJIDAD_MEDIA",
+          "basename": "COMPLEJIDAD_MEDIA",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "COMPLEJIDAD_ALTA",
+          "name": "COMPLEJIDAD_ALTA",
+          "basename": "COMPLEJIDAD_ALTA",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "NUMERO_DISTINTIVO",
+          "name": "NUMERO_DISTINTIVO",
+          "basename": "NUMERO_DISTINTIVO",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "MODALIDAD_INTRAMURAL",
+          "name": "MODALIDAD_INTRAMURAL",
+          "basename": "MODALIDAD_INTRAMURAL",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "MODALIDAD_EXTRAMURAL",
+          "name": "MODALIDAD_EXTRAMURAL",
+          "basename": "MODALIDAD_EXTRAMURAL",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "MODALIDAD_UNIDAD_MOVIL",
+          "name": "MODALIDAD_UNIDAD_MOVIL",
+          "basename": "MODALIDAD_UNIDAD_MOVIL",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "MODALIDAD_DOMICILIARIO",
+          "name": "MODALIDAD_DOMICILIARIO",
+          "basename": "MODALIDAD_DOMICILIARIO",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "MODALIDAD_JORNADA_SALUD",
+          "name": "MODALIDAD_JORNADA_SALUD",
+          "basename": "MODALIDAD_JORNADA_SALUD",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "MODALIDAD_TELEMEDICINA",
+          "name": "MODALIDAD_TELEMEDICINA",
+          "basename": "MODALIDAD_TELEMEDICINA",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "MODALIDAD_PRESTADOR_REFERENCIA",
+          "name": "MODALIDAD_PRESTADOR_REFERENCIA",
+          "basename": "MODALIDAD_PRESTADOR_REFERENCIA",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "MODALIDAD_PRESTADOR_REFERENCIA_TELEMEDICINA_INTERACTIVA",
+          "name": "MODALIDAD_PRESTADOR_REFERENCIA_TELEMEDICINA_INTERACTIVA",
+          "basename": "MODALIDAD_PRESTADOR_REFERENCIA_TELEMEDICINA_INTERACTIVA",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "MODALIDAD_PRESTADOR_REFERENCIA_TELEMEDICINA_NO_INTERACTIVA",
+          "name": "MODALIDAD_PRESTADOR_REFERENCIA_TELEMEDICINA_NO_INTERACTIVA",
+          "basename": "MODALIDAD_PRESTADOR_REFERENCIA_TELEMEDICINA_NO_INTERACTIVA",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "MODALIDAD_PRESTADOR_REFERENCIA_TELE_EXPERTICIA",
+          "name": "MODALIDAD_PRESTADOR_REFERENCIA_TELE_EXPERTICIA",
+          "basename": "MODALIDAD_PRESTADOR_REFERENCIA_TELE_EXPERTICIA",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "MODALIDAD_PRESTADOR_REFERENCIA_TELE_MONITOREO",
+          "name": "MODALIDAD_PRESTADOR_REFERENCIA_TELE_MONITOREO",
+          "basename": "MODALIDAD_PRESTADOR_REFERENCIA_TELE_MONITOREO",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "MODALIDAD_PRESTADOR_REMISOR",
+          "name": "MODALIDAD_PRESTADOR_REMISOR",
+          "basename": "MODALIDAD_PRESTADOR_REMISOR",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "MODALIDAD_PRESTADOR_REMISOR_TELE_EXPERTICIA",
+          "name": "MODALIDAD_PRESTADOR_REMISOR_TELE_EXPERTICIA",
+          "basename": "MODALIDAD_PRESTADOR_REMISOR_TELE_EXPERTICIA",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "MODALIDAD_PRESTADOR_REMISOR_TELE_MONITOREO",
+          "name": "MODALIDAD_PRESTADOR_REMISOR_TELE_MONITOREO",
+          "basename": "MODALIDAD_PRESTADOR_REMISOR_TELE_MONITOREO",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "COMPLEJIDADES",
+          "name": "COMPLEJIDADES",
+          "basename": "COMPLEJIDADES",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "gw_mea_key_fid",
+          "name": "Measure names",
+          "analyticType": "dimension",
+          "semanticType": "nominal"
+        }
+      ],
+      "measures": [
+        {
+          "fid": "CODIGO_HABILITACION",
+          "name": "CODIGO_HABILITACION",
+          "basename": "CODIGO_HABILITACION",
+          "analyticType": "measure",
+          "semanticType": "quantitative",
+          "aggName": "sum",
+          "offset": 0
+        },
+        {
+          "fid": "SERV_CODIGO",
+          "name": "SERV_CODIGO",
+          "basename": "SERV_CODIGO",
+          "analyticType": "measure",
+          "semanticType": "quantitative",
+          "aggName": "sum",
+          "offset": 0
+        },
+        {
+          "fid": "FECHA_CIERRE",
+          "name": "FECHA_CIERRE",
+          "basename": "FECHA_CIERRE",
+          "analyticType": "measure",
+          "semanticType": "quantitative",
+          "aggName": "sum",
+          "offset": 0
+        },
+        {
+          "fid": "gw_count_fid",
+          "name": "Row count",
+          "analyticType": "measure",
+          "semanticType": "quantitative",
+          "aggName": "sum",
+          "computed": true,
+          "expression": {
+            "op": "one",
+            "params": [],
+            "as": "gw_count_fid"
+          }
+        },
+        {
+          "fid": "gw_mea_val_fid",
+          "name": "Measure values",
+          "analyticType": "measure",
+          "semanticType": "quantitative",
+          "aggName": "sum"
+        }
+      ],
+      "rows": [
+        {
+          "fid": "SEDE_NOMBRE",
+          "name": "SEDE_NOMBRE",
+          "basename": "SEDE_NOMBRE",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        },
+        {
+          "fid": "SERV_NOMBRE",
+          "name": "SERV_NOMBRE",
+          "basename": "SERV_NOMBRE",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        }
+      ],
+      "columns": [
+        {
+          "fid": "gw_count_fid",
+          "name": "Row count",
+          "analyticType": "measure",
+          "semanticType": "quantitative",
+          "aggName": "sum",
+          "computed": true,
+          "expression": {
+            "op": "one",
+            "params": [],
+            "as": "gw_count_fid"
+          }
+        }
+      ],
+      "color": [
+        {
+          "fid": "SERV_NOMBRE",
+          "name": "SERV_NOMBRE",
+          "basename": "SERV_NOMBRE",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0
+        }
+      ],
+      "opacity": [],
+      "size": [],
+      "shape": [],
+      "radius": [],
+      "theta": [],
+      "longitude": [],
+      "latitude": [],
+      "geoId": [],
+      "details": [],
+      "filters": [
+        {
+          "fid": "COMPLEJIDADES",
+          "name": "COMPLEJIDADES",
+          "basename": "COMPLEJIDADES",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0,
+          "rule": {
+            "type": "not in",
+            "value": []
+          }
+        },
+        {
+          "fid": "SEDE_NOMBRE",
+          "name": "SEDE_NOMBRE",
+          "basename": "SEDE_NOMBRE",
+          "semanticType": "nominal",
+          "analyticType": "dimension",
+          "offset": 0,
+          "rule": {
+            "type": "not in",
+            "value": []
+          }
+        }
+      ],
+      "text": []
+    },
+    "layout": {
+      "showActions": false,
+      "showTableSummary": false,
+      "stack": "stack",
+      "interactiveScale": false,
+      "zeroScale": true,
+      "size": {
+        "mode": "auto",
+        "width": 320,
+        "height": 200
+      },
+      "format": {},
+      "geoKey": "name",
+      "resolve": {
+        "x": false,
+        "y": false,
+        "color": false,
+        "opacity": false,
+        "shape": false,
+        "size": false
+      }
+    },
+    "visId": "gw_rR5_",
+    "name": "Chart 1"
+  }
+]
