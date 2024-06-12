@@ -69,6 +69,7 @@ with st.sidebar:
                             'Predicción de Diabetes',
                             'Modelo Construido Riesgo Cardiovascular',
                             'Deteccion de Datos Anomalos',
+                            'Reporte Dinamico Registro de Prestacion de Salud ',
                             ],
                            icons = ['activity','pen','person','book','heart','house'],
                            default_index = 0)
@@ -388,3 +389,11 @@ if(selected == 'Importancia de los Indicadores'):
         with st.expander("💡 Video Tutorial de Indicadores"):
             with st.spinner("Cargando video"):
                 st.video("indicadores.mp4", format="video/mp4", start_time=0)
+
+
+if(selected == 'Reporte Dinamico Registro de Prestacion de Salud'):
+     #Page title
+    st.title('Reporte Dinamico Registro de Prestacion de Salud - REPS') 
+    df = pd.read_csv("reps2024.csv")
+    pyg_app = StreamlitRenderer(df,spec="./spec/bikes_chart.json")
+    pyg_app.explorer()
