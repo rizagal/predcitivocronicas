@@ -395,5 +395,5 @@ if(selected == 'Reporte Dinamico Registro de Prestacion de Salud'):
      #Page title
     st.title('Reporte Dinamico Registro de Prestacion de Salud - REPS') 
     df = pd.read_csv("reps2024.csv")
-    pyg_app = StreamlitRenderer(df,spec="./spec/bikes_chart.json")
+    pyg_app = StreamlitRenderer(df,spec="bikes_chart.json")
     pyg_app.explorer()
