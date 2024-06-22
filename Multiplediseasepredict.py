@@ -396,6 +396,6 @@ if(selected == 'Visualizacion de Servicios Habilitados por IPS - REPS'):
      #Page title
     st.title('Visualizacion de Servicios Habilitados por IPS - REPS') 
     df = pd.read_csv("reps2024.csv")
-    pyg_app = StreamlitRenderer(df,spec="./spec/bikes_chart.json")
+    pyg_app = StreamlitRenderer(df,spec="bikes_chart.json")
     pyg_app.explorer()
 
