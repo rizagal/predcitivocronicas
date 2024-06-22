@@ -12,12 +12,12 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import numpy as np
 import matplotlib.pyplot as plt
-
+from sklearn.ensemble import IsolationForest
 import pandas as pd
-
+from pandasai import SmartDataframe
 import plotly.express as px  # pip install plotly-express
 from streamlit.components.v1 import html
-
+from pygwalker.api.streamlit import StreamlitRenderer
 
 
 
@@ -70,7 +70,8 @@ with st.sidebar:
                             'Predicción de Diabetes',
                             'Modelo Construido Riesgo Cardiovascular',                            
                             'Prediccion de Enfermedades Cardiacas',
-                            'Deteccion de Datos Anomalos'                           
+                            'Deteccion de Datos Anomalos'
+                            
                             ],
                            icons = ['activity','pen','building','book','heart','clipboard','person'],
                            default_index = 0)
@@ -390,4 +391,12 @@ if(selected == 'Importancia de los Indicadores'):
         with st.expander("💡 Video Tutorial de Indicadores"):
             with st.spinner("Cargando video"):
                 st.video("indicadores.mp4", format="video/mp4", start_time=0)
+
+
+if(selected == 'Visualizacion de Servicios Habilitados por IPS - REPS'):
+     #Page title
+    st.title('Visualizacion de Servicios Habilitados por IPS - REPS') 
+    df = pd.read_csv("reps2024.csv")
+    pyg_app = StreamlitRenderer(df,spec="./spec/bikes_chart.json")
+    pyg_app.explorer()
 
