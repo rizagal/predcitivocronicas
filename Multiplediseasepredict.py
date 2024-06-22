@@ -14,7 +14,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 import pandas as pd
-from pandasai import SmartDataframe
+
 import plotly.express as px  # pip install plotly-express
 from streamlit.components.v1 import html
 
