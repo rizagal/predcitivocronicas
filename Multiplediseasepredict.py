@@ -17,11 +17,12 @@ import pandas as pd
 import plotly.express as px  # pip install plotly-express
 from streamlit.components.v1 import html
 from pygwalker.api.streamlit import StreamlitRenderer
+import streamlit.components.v1 as components
 
 
 
 # Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
-# riesgocardio_model = pickle.load(open('model_datosderiesgo.pkl','rb'))
+riesgocardio_model = pickle.load(open('model_datosderiesgo.pkl','rb'))
 
 diabetes_model = pickle.load(open('diabetes_model.sav','rb'))
 
@@ -66,13 +67,14 @@ with st.sidebar:
                            ['Consulta Resultado Indicadores de Calidad',
                             'Importancia de los Indicadores',
                             'Visualizacion de Servicios Habilitados por IPS - REPS',
+                            'Visualizacion Poblacion Contratada',
                             'Predicción de Diabetes',
                             'Modelo Construido Riesgo Cardiovascular',                            
                             'Prediccion de Enfermedades Cardiacas',
                             'Deteccion de Datos Anomalos'
                             
                             ],
-                           icons = ['activity','pen','building','book','heart','clipboard','person'],
+                           icons = ['activity','pen','building','universal-access','book','heart','clipboard','person'],
                            default_index = 0)
    
 
@@ -398,4 +400,7 @@ if(selected == 'Visualizacion de Servicios Habilitados por IPS - REPS'):
     df = pd.read_csv("reps2024.csv")
     pyg_app = StreamlitRenderer(df,spec="bikes_chart.json")
     pyg_app.explorer()
+
+if(selected == 'Visualizacion Poblacion Contratada'):
+    components.iframe("https://app.powerbi.com/view?r=eyJrIjoiY2ZkZTNhYmYtZWQ2ZC00NzQxLWE3MTctZjA4MGUxOTI4N2MxIiwidCI6ImE4MjRmZDZkLTVkYzItNDdjMC1iNTQ2LTU5MWZmZGJmYmFlNiJ9", height=800)
 
