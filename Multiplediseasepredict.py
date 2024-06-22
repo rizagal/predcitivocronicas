@@ -402,5 +402,5 @@ if(selected == 'Visualizacion de Servicios Habilitados por IPS - REPS'):
     pyg_app.explorer()
 
 if(selected == 'Visualizacion Poblacion Contratada'):
-    components.iframe("https://app.powerbi.com/view?r=eyJrIjoiY2ZkZTNhYmYtZWQ2ZC00NzQxLWE3MTctZjA4MGUxOTI4N2MxIiwidCI6ImE4MjRmZDZkLTVkYzItNDdjMC1iNTQ2LTU5MWZmZGJmYmFlNiJ9", height=850)
+    components.iframe("https://app.powerbi.com/view?r=eyJrIjoiY2ZkZTNhYmYtZWQ2ZC00NzQxLWE3MTctZjA4MGUxOTI4N2MxIiwidCI6ImE4MjRmZDZkLTVkYzItNDdjMC1iNTQ2LTU5MWZmZGJmYmFlNiJ9", height=950)
 
