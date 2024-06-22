@@ -12,7 +12,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.ensemble import IsolationForest
+
 import pandas as pd
 from pandasai import SmartDataframe
 import plotly.express as px  # pip install plotly-express
