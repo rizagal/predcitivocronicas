@@ -423,11 +423,11 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
         
     with col2:
        st.header("Favor Filtrar:")
-        ips = st.selectbox(
-        "Seleccione IPS:",
-        options=dfpqrs["NOMBREIPS"].unique(),
-        help="Seleccione Sede",  
-        )
+       ips = st.selectbox(
+       "Seleccione IPS:",
+       options=dfpqrs["NOMBREIPS"].unique(),
+       help="Seleccione Sede",  
+       )
     
         mes = st.multiselect(
         "Seleccione Mes:",
