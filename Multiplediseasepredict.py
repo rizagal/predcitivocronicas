@@ -430,7 +430,7 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
        "NOMBREIPS == @ips1 & MES == @mes1"
        )
  
-       st.dataframe(dfpqrs_selection.style.apply(color_negative_redusuario, subset=['TOTAL']),hide_index=True,height=450,use_container_width=True,column_order=("MES","PETICIONES".format({"PETICIONES": "{:.1}"}),"QUEJAS","RECLAMOS","SUGERENCIAS","FELICITACIONES","TOTAL","NOMBREIPS"))
+       st.dataframe(dfpqrs_selection.style.apply(color_negative_redusuario, subset=['TOTAL']),hide_index=True,height=450,use_container_width=True,column_order=("MES",("PETICIONES").format({"PETICIONES": "{:.1}"}),"QUEJAS","RECLAMOS","SUGERENCIAS","FELICITACIONES","TOTAL","NOMBREIPS"))
      
 
 
