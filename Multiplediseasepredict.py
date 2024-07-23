@@ -402,7 +402,7 @@ if(selected == 'Importancia de los Indicadores'):
 if(selected == 'Planeacion Integral'): 
     st.title('Planeacion Integral')   
     st.markdown("ver datos")
-    show_pdf("Planeacion Integral e Indicadores en Salud.pdf") 
+    show_pdf("Planeacionintegral.pdf") 
 
 
 if(selected == 'Visualizacion de Servicios Habilitados por IPS - REPS'):
