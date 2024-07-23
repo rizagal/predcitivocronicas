@@ -58,11 +58,11 @@ st.sidebar.image("SIGES17.png",caption="")
 def format_func(option):
     return CHOICES[option]    
 
-def ViewPDF(wch_fl):
-    with open(wch_fl,"rb") as pdf_file:
-        base64_pdf = base64.b64encode(pdf_file.read()).decode('utf-8')
-        pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="1000" height="500" type="application/pdf">' 
-        st.markdown(pdf_display, unsafe_allow_html=True)
+def show_pdf(file_path):
+    with open(file_path,"rb") as f:
+          base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+    pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf">'
+    st.markdown(pdf_display, unsafe_allow_html=True)
 
 #Sidebar for navigation
 
@@ -402,8 +402,7 @@ if(selected == 'Importancia de los Indicadores'):
 if(selected == 'Planeacion Integral'): 
     st.title('Planeacion Integral')   
     st.markdown("ver datos")
-
- 
+    show_pdf("my_pdf.pdf") 
 
 
 if(selected == 'Visualizacion de Servicios Habilitados por IPS - REPS'):
