@@ -411,23 +411,15 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
         # st.subheader(f"{total_sales:,}")
         st.metric(label="Total Registros:",value=f"{total_sales:,.0f}")
 
-    # [BAR CHART]
-    sales_by_product_line = df_selection.groupby(by=["EVALUACION"])[["PORCENTAJE"]].mean().sort_values(by="PORCENTAJE")
-    fig_product_sales = px.bar(
-        sales_by_product_line,
-        x="PORCENTAJE",
-        y=sales_by_product_line.index,
-        orientation="h",        
-        text="PORCENTAJE",        
-        color_discrete_sequence=["#0083B8"] * len(sales_by_product_line),
-        template="plotly_white",
-    )
-    fig_product_sales.update_layout(
-        plot_bgcolor="rgba(0,0,0,0)",
-        xaxis=(dict(showgrid=False))
-    )
-    fig_product_sales.update_traces(textposition="outside")
-    fig_product_sales.update_layout(title_text='Consolidado Oportunidad por Servicio Durante los Meses Seleccionados', title_x=0.1)
+      col1,col2=st.columns(2)
+
+    with col1:
+       st.dataframe(df_selection.style.apply(color_negative_red, subset=['PORCENTAJE']).format({"PORCENTAJE": "{:.3}"}),hide_index=True,height=450,use_container_width=True,column_order=("EVALUACION","MES","PORCENTAJE","NOMBREIPS"))
+   
+        
+    with col2:
+       
+     
 
 
 if(selected == 'Importancia de los Indicadores'):
