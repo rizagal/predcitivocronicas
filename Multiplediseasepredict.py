@@ -402,8 +402,7 @@ if(selected == 'Importancia de los Indicadores'):
 if(selected == 'Planeacion Integral'): 
     st.title('Planeacion Integral')   
     st.markdown("""
-    <embed src="https://drive.google.com/viewerng/
-    viewer?embedded=true&url=Planeacionintegral.pdf" width="400" height="400">
+    <embed src="Planeacionintegral.pdf" width="400" height="400">
     """, unsafe_allow_html=True)
 
 
