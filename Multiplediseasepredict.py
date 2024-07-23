@@ -384,41 +384,31 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
     # ---- READ EXCEL ----
   
     df = pd.read_csv("atencionusuariostreamlit.csv")
-    dfpqrs = pd.read_csv("pqrsfstreamlit.csv")
-    
-    st.header("Favor Filtrar:")
-    ips = st.selectbox(
-    "Seleccione IPS:",
-    options=df["NOMBREIPS"].unique(),
-    help="Seleccione Sede",  
-    )
-
-    mes = st.multiselect(
-    "Seleccione Mes:",
-    options=df["MES"].unique(),
-    default=df["MES"].unique()
-)
-
-
-    df_selection = df.query(
-    "NOMBREIPS == @ips & MES == @mes"
-    )
+    dfpqrs = pd.read_csv("pqrsfstreamlit.csv")   
 
     st.markdown("""---""")
-
-    # TOP KPI's
-    total_sales = int(df_selection["NOMBREIPS"].count())
-
-    left_column, middle_column, right_column = st.columns(3)
-    with left_column:
-        # st.subheader("Total Registros:")
-        # st.subheader(f"{total_sales:,}")
-        st.metric(label="Total Registros:",value=f"{total_sales:,.0f}")
 
     col1,col2=st.columns(2)
 
     with col1:
-       st.dataframe(df_selection.style.apply(color_negative_redusuario, subset=['PORCENTAJE']),hide_index=True,height=450,use_container_width=True,column_order=("EVALUACION","MES","SATISFECHOS","TOTALENCUESTAS","PORCENTAJE","NOMBREIPS"))
+        st.header("Favor Filtrar:")
+        ips = st.selectbox(
+        "Seleccione IPS:",
+        options=df["NOMBREIPS"].unique(),
+        help="Seleccione Sede",  
+        )
+
+        mes = st.multiselect(
+        "Seleccione Mes:",
+        options=df["MES"].unique(),
+        default=df["MES"].unique()
+        )
+
+
+        df_selection = df.query(
+        "NOMBREIPS == @ips & MES == @mes"
+        )
+        st.dataframe(df_selection.style.apply(color_negative_redusuario, subset=['PORCENTAJE']),hide_index=True,height=450,use_container_width=True,column_order=("EVALUACION","MES","SATISFECHOS","TOTALENCUESTAS","PORCENTAJE","NOMBREIPS"))
    
         
     with col2:
