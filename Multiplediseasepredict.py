@@ -410,22 +410,15 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
         # st.subheader("Total Registros:")
         # st.subheader(f"{total_sales:,}")
         st.metric(label="Total Registros:",value=f"{total_sales:,.0f}")
-    # with middle_column:
-    #     st.subheader("Average Rating:")
-    #     st.subheader(f"{average_rating} {star_rating}")
-    # with right_column:
-    #     st.subheader("Average Sales Per Transaction:")
-    #     st.subheader(f"US $ {average_sale_by_transaction}")
-    
 
     # [BAR CHART]
     sales_by_product_line = df_selection.groupby(by=["EVALUACION"])[["PORCENTAJE"]].mean().sort_values(by="PORCENTAJE")
     fig_product_sales = px.bar(
         sales_by_product_line,
-        x="OPORTUNIDAD",
+        x="PORCENTAJE",
         y=sales_by_product_line.index,
         orientation="h",        
-        text="OPORTUNIDAD",        
+        text="PORCENTAJE",        
         color_discrete_sequence=["#0083B8"] * len(sales_by_product_line),
         template="plotly_white",
     )
