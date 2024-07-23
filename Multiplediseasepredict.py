@@ -396,14 +396,8 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
 )
 
 
-    servicio = st.multiselect(
-    "Seleccione Servicio:",
-    options=df["SERVICIO"].unique(),
-    default=df["SERVICIO"].unique()
-)
-
-    df_selection = df.query(
-    "NOMBREIPS == @ips & MES == @mes & SERVICIO == @servicio"
+     df_selection = df.query(
+    "NOMBREIPS == @ips & MES == @mes
     )
 
     # st.dataframe(df_selection)
@@ -414,8 +408,7 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
     total_sales = int(df_selection["NOMBREIPS"].count())
     # average_rating = round(df_selection["Rating"].mean(), 1)
     # star_rating = ":star:" * int(round(average_rating, 0))
-    # average_sale_by_transaction = round(df_selection["Total"].mean(), 2)
-    
+    # average_sale_by_transaction = round(df_selection["Total"].mean(), 2)    
    
 
     left_column, middle_column, right_column = st.columns(3)
