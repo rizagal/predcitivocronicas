@@ -405,6 +405,37 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
     # TOP KPI's
     total_sales = int(df_selection["NOMBREIPS"].count())
 
+    left_column, middle_column, right_column = st.columns(3)
+    with left_column:
+        # st.subheader("Total Registros:")
+        # st.subheader(f"{total_sales:,}")
+        st.metric(label="Total Registros:",value=f"{total_sales:,.0f}")
+    # with middle_column:
+    #     st.subheader("Average Rating:")
+    #     st.subheader(f"{average_rating} {star_rating}")
+    # with right_column:
+    #     st.subheader("Average Sales Per Transaction:")
+    #     st.subheader(f"US $ {average_sale_by_transaction}")
+    
+
+    # [BAR CHART]
+    sales_by_product_line = df_selection.groupby(by=["EVALUACION"])[["PORCENTAJE"]].mean().sort_values(by="PORCENTAJE")
+    fig_product_sales = px.bar(
+        sales_by_product_line,
+        x="OPORTUNIDAD",
+        y=sales_by_product_line.index,
+        orientation="h",        
+        text="OPORTUNIDAD",        
+        color_discrete_sequence=["#0083B8"] * len(sales_by_product_line),
+        template="plotly_white",
+    )
+    fig_product_sales.update_layout(
+        plot_bgcolor="rgba(0,0,0,0)",
+        xaxis=(dict(showgrid=False))
+    )
+    fig_product_sales.update_traces(textposition="outside")
+    fig_product_sales.update_layout(title_text='Consolidado Oportunidad por Servicio Durante los Meses Seleccionados', title_x=0.1)
+
 
 if(selected == 'Importancia de los Indicadores'):
     
