@@ -393,7 +393,9 @@ if(selected == 'Importancia de los Indicadores'):
             with st.spinner("Cargando video"):
                 st.video("indicadores.mp4", format="video/mp4", start_time=0)
 
-if(selected == 'Planeacion Integral'): 
+if(selected == 'Planeacion Integral'):
+    #Page title
+   st.title('Planeacion Integral e Indicadores en Salud')
    source1='./Planeacion Integral e Indicadores en Salud.pdf'
    pdf_reader(source1)
 
