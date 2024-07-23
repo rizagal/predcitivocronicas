@@ -18,6 +18,7 @@ import plotly.express as px  # pip install plotly-express
 from streamlit.components.v1 import html
 from pygwalker.api.streamlit import StreamlitRenderer
 import streamlit.components.v1 as components
+from streamlit_pdf_reader import pdf_reader
 
 # Este modelo lo genere en google colab en la cuenta de facildiez@gmail.com el archivo se llama Entrenar Modelo.ipynb, para crearlo me guie con: https://www.youtube.com/watch?v=lK0aVny0Rsw
 #riesgocardio_model = pickle.load(open('model_datosderiesgo.pkl','rb'))
@@ -393,14 +394,8 @@ if(selected == 'Importancia de los Indicadores'):
                 st.video("indicadores.mp4", format="video/mp4", start_time=0)
 
 if(selected == 'Planeacion Integral'): 
-    with open("Planeacionintegral.pdf", "rb") as f:
-        base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-
-    # Embedding PDF in HTML
-    pdf_display = F'<embed src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf">'
-
-    # Displaying File
-    st.markdown(pdf_display, unsafe_allow_html=True)
+   source1='./test.pdf'
+   pdf_reader(source1)
 
 
 if(selected == 'Visualizacion de Servicios Habilitados por IPS - REPS'):
