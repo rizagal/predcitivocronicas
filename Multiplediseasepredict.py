@@ -376,7 +376,7 @@ def open_page(url):
 if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
     
     #Page title
-    st.title('Resultado Indicadores de Calidad Red de Salud de Ladera E.S.E')   
+    st.title('Resultado Indicadores de Atencion al Usuario')   
 
     # ---- READ EXCEL ----
   
