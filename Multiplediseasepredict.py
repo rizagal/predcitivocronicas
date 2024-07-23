@@ -400,6 +400,11 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
     "NOMBREIPS == @ips & MES == @mes"
     )
 
+    st.markdown("""---""")
+
+    # TOP KPI's
+    total_sales = int(df_selection["NOMBREIPS"].count())
+
 
 if(selected == 'Importancia de los Indicadores'):
     
