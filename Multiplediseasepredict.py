@@ -58,6 +58,12 @@ st.sidebar.image("SIGES17.png",caption="")
 def format_func(option):
     return CHOICES[option]    
 
+def ViewPDF(wch_fl):
+    with open(wch_fl,"rb") as pdf_file:
+        base64_pdf = base64.b64encode(pdf_file.read()).decode('utf-8')
+        pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="1000" height="500" type="application/pdf">' 
+        st.markdown(pdf_display, unsafe_allow_html=True)
+
 #Sidebar for navigation
 
 with st.sidebar:
@@ -394,11 +400,7 @@ if(selected == 'Importancia de los Indicadores'):
                 st.video("indicadores.mp4", format="video/mp4", start_time=0)
 
 if(selected == 'Planeacion Integral'):
-    def ViewPDF(wch_fl):
-        with open(wch_fl,"rb") as pdf_file:
-            base64_pdf = base64.b64encode(pdf_file.read()).decode('utf-8')
-            pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="1000" height="500" type="application/pdf">' 
-            st.markdown(pdf_display, unsafe_allow_html=True)
+  
 
             st.markdown("ver datos")
 
