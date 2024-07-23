@@ -400,7 +400,7 @@ if(selected == 'Planeacion Integral'):
             pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="1000" height="500" type="application/pdf">' 
             st.markdown(pdf_display, unsafe_allow_html=True)
 
-             st.markdown("ver datos")
+            st.markdown("ver datos")
 
     ViewPDF("Planeacion Integral e Indicadores en Salud.pdf")    # provide file path + full file name
 
