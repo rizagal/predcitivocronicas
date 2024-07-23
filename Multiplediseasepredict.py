@@ -421,44 +421,7 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
     #     st.subheader(f"{average_rating} {star_rating}")
     # with right_column:
     #     st.subheader("Average Sales Per Transaction:")
-    #     st.subheader(f"US $ {average_sale_by_transaction}")
-    
-
-    # [BAR CHART]
-    sales_by_product_line = df_selection.groupby(by=["SERVICIO"])[["OPORTUNIDAD"]].mean().sort_values(by="OPORTUNIDAD")
-    fig_product_sales = px.bar(
-        sales_by_product_line,
-        x="OPORTUNIDAD",
-        y=sales_by_product_line.index,
-        orientation="h",        
-        text="OPORTUNIDAD",        
-        color_discrete_sequence=["#0083B8"] * len(sales_by_product_line),
-        template="plotly_white",
-    )
-    fig_product_sales.update_layout(
-        plot_bgcolor="rgba(0,0,0,0)",
-        xaxis=(dict(showgrid=False))
-    )
-    fig_product_sales.update_traces(textposition="outside")
-    fig_product_sales.update_layout(title_text='Consolidado Oportunidad por Servicio Durante los Meses Seleccionados', title_x=0.1)    
-    
-    col1,col2=st.columns(2)
-
-    with col1:
-       st.dataframe(df_selection.style.apply(color_negative_red, subset=['OPORTUNIDAD']).format({"OPORTUNIDAD": "{:.3}"}),hide_index=True,height=450,use_container_width=True,column_order=("SERVICIO","MES","OPORTUNIDAD","NOMBREIPS"))
-   
-        
-    with col2:
-       
-        fig = px.line(df_selection, x='MES', y='OPORTUNIDAD', color='SERVICIO', text="OPORTUNIDAD", markers=True)
-        fig.update_layout(
-        plot_bgcolor="rgba(0,0,0,0)",
-        xaxis=(dict(showgrid=False))
-        )
-        fig.update_traces(textposition="top center")        
-        fig.update_layout(title_text='Oportunidad de la IPS por Meses y Servicios Seleccionados', title_x=0.1)   
-        fig    
-       
+    #     st.subheader(f"US $ {average_sale_by_transaction}")      
 
 
 
