@@ -65,7 +65,7 @@ with st.sidebar:
     selected = option_menu('Indicadores de Calidad y Sistema de Predicción de Enfermedades',
                            ['Consulta Resultado Indicadores de Calidad',
                             'Importancia de los Indicadores',
-                            'Planeacio Integral',
+                            'Planeacion Integral',
                             'Visualizacion de Servicios Habilitados por IPS - REPS',
                             'Visualizacion Poblacion Contratada',
                             'Predicción de Diabetes',
@@ -393,7 +393,7 @@ if(selected == 'Importancia de los Indicadores'):
             with st.spinner("Cargando video"):
                 st.video("indicadores.mp4", format="video/mp4", start_time=0)
 
-if(selected == 'Importancia de los Indicadores'):
+if(selected == 'Planeacion Integral'):
     def ViewPDF(wch_fl):
         with open(wch_fl,"rb") as pdf_file:
             base64_pdf = base64.b64encode(pdf_file.read()).decode('utf-8')
