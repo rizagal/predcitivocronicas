@@ -399,12 +399,10 @@ if(selected == 'Importancia de los Indicadores'):
             with st.spinner("Cargando video"):
                 st.video("indicadores.mp4", format="video/mp4", start_time=0)
 
-if(selected == 'Planeacion Integral'):
-  
+if(selected == 'Planeacion Integral'): 
+    st.markdown("ver datos")
 
-            st.markdown("ver datos")
-
-            ViewPDF("Planeacion Integral e Indicadores en Salud.pdf")    # provide file path + full file name
+    ViewPDF("Planeacion Integral e Indicadores en Salud.pdf")    # provide file path + full file name
 
 
 if(selected == 'Visualizacion de Servicios Habilitados por IPS - REPS'):
