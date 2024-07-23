@@ -400,7 +400,7 @@ if(selected == 'Importancia de los Indicadores'):
                 st.video("indicadores.mp4", format="video/mp4", start_time=0)
 
 if(selected == 'Planeacion Integral'): 
-    st.markdown("ver datos")
+   st.markdown("ver datos")
 
  
 
