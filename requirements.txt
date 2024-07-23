@@ -8,3 +8,5 @@ numpy
 matplotlib
 pandas
 pygwalker
+base64
+
