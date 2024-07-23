@@ -396,10 +396,10 @@ if(selected == 'Importancia de los Indicadores'):
 
 if(selected == 'Importancia de los Indicadores'):
     def ViewPDF(wch_fl):
-    with open(wch_fl,"rb") as pdf_file:
-        base64_pdf = base64.b64encode(pdf_file.read()).decode('utf-8')
-        pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="1000" height="500" type="application/pdf">' 
-        st.markdown(pdf_display, unsafe_allow_html=True)
+        with open(wch_fl,"rb") as pdf_file:
+            base64_pdf = base64.b64encode(pdf_file.read()).decode('utf-8')
+            pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="1000" height="500" type="application/pdf">' 
+            st.markdown(pdf_display, unsafe_allow_html=True)
 
     ViewPDF("Planeacion Integral e Indicadores en Salud.pdf")    # provide file path + full file name
 
