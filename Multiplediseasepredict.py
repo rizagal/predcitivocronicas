@@ -402,7 +402,7 @@ if(selected == 'Importancia de los Indicadores'):
 if(selected == 'Planeacion Integral'): 
     st.markdown("ver datos")
 
-    ViewPDF("Planeacion Integral e Indicadores en Salud.pdf")    # provide file path + full file name
+ 
 
 
 if(selected == 'Visualizacion de Servicios Habilitados por IPS - REPS'):
