@@ -422,6 +422,24 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
    
         
     with col2:
+       st.header("Favor Filtrar:")
+        ips = st.selectbox(
+        "Seleccione IPS:",
+        options=dfpqrs["NOMBREIPS"].unique(),
+        help="Seleccione Sede",  
+        )
+    
+        mes = st.multiselect(
+        "Seleccione Mes:",
+        options=dfpqrs["MES"].unique(),
+        default=dfpqrs["MES"].unique()
+        )
+    
+    
+        dfpqrs_selection = dfpqrs.query(
+        "NOMBREIPS == @ips & MES == @mes"
+        )
+ 
        st.dataframe(dfpqrs_selection.style.apply(color_negative_redusuario, subset=['TOTAL']),hide_index=True,height=450,use_container_width=True,column_order=("EVALUACION","MES","PETICIONES","QUEJAS","RECLAMOS","NOMBREIPS"))
      
 
