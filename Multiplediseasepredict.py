@@ -250,7 +250,7 @@ def color_negative_red(s):
     return ['background-color: #e88868' if v else '' for v in is_max]
 
 def color_negative_redusuario(s):
-    is_max = s == s.min()
+    is_min = s == s.min()
     return ['background-color: #e88868' if v else '' for v in is_min]
 
 
