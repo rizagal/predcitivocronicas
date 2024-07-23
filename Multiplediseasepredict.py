@@ -393,36 +393,7 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
     "Seleccione Mes:",
     options=df["MES"].unique(),
     default=df["MES"].unique()
-)
-
-
-     df_selection = df.query(
-    "NOMBREIPS == @ips & MES == @mes
-    )
-
-    # st.dataframe(df_selection)
-
-    st.markdown("""---""")
-
-    # TOP KPI's
-    total_sales = int(df_selection["NOMBREIPS"].count())
-    # average_rating = round(df_selection["Rating"].mean(), 1)
-    # star_rating = ":star:" * int(round(average_rating, 0))
-    # average_sale_by_transaction = round(df_selection["Total"].mean(), 2)    
-   
-
-    left_column, middle_column, right_column = st.columns(3)
-    with left_column:
-        # st.subheader("Total Registros:")
-        # st.subheader(f"{total_sales:,}")
-        st.metric(label="Total Registros:",value=f"{total_sales:,.0f}")
-    # with middle_column:
-    #     st.subheader("Average Rating:")
-    #     st.subheader(f"{average_rating} {star_rating}")
-    # with right_column:
-    #     st.subheader("Average Sales Per Transaction:")
-    #     st.subheader(f"US $ {average_sale_by_transaction}")      
-
+)   
 
 
 if(selected == 'Importancia de los Indicadores'):
