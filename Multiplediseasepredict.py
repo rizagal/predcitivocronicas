@@ -402,7 +402,7 @@ if(selected == 'Importancia de los Indicadores'):
 if(selected == 'Planeacion Integral'): 
     st.title('Planeacion Integral')   
     st.markdown("""
-    <embed src="Planeacionintegral.pdf" width="400" height="400">
+    <embed src="https://github.com/rizagal/predcitivocronicas/blob/main/Planeacionintegral.pdf" width="400" height="400">
     """, unsafe_allow_html=True)
 
 
