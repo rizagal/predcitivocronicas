@@ -418,7 +418,7 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
    
         
     with col2:
-       
+        st.markdown("""---""")
      
 
 
