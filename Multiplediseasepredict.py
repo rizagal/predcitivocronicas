@@ -74,7 +74,7 @@ with st.sidebar:
                             'Deteccion de Datos Anomalos'
                             
                             ],
-                           icons = ['activity','pen','building','universal-access','book','heart','clipboard','person'],
+                           icons = ['activity','pen','pen','building','universal-access','book','heart','clipboard','person'],
                            default_index = 0)
    
 
