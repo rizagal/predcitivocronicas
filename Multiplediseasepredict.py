@@ -414,7 +414,7 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
     col1,col2=st.columns(2)
 
     with col1:
-       st.dataframe(df_selection.style.apply(color_negative_red, subset=['PORCENTAJE']).format({"PORCENTAJE": "{:.0}"}),hide_index=True,height=450,use_container_width=True,column_order=("EVALUACION","MES","PORCENTAJE","NOMBREIPS"))
+       st.dataframe(df_selection.style.apply(color_negative_red, subset=['PORCENTAJE']),hide_index=True,height=450,use_container_width=True,column_order=("EVALUACION","MES","PORCENTAJE","NOMBREIPS"))
    
         
     with col2:
