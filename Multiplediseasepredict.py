@@ -391,7 +391,7 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
     col1,col2=st.columns(2)
 
     with col1:
-        st.header("Favor Filtrar:")
+        st.header("Encuesta Satisfaccion:")
         ips = st.selectbox(
         "Seleccione IPS:",
         options=df["NOMBREIPS"].unique(),
@@ -408,11 +408,11 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
         df_selection = df.query(
         "NOMBREIPS == @ips & MES == @mes"
         )
-        st.dataframe(df_selection.style.apply(color_negative_redusuario, subset=['PORCENTAJE']),hide_index=True,height=450,use_container_width=True,column_order=("EVALUACION","MES","SATISFECHOS","TOTALENCUESTAS","PORCENTAJE","NOMBREIPS"))
+        st.dataframe(df_selection.style.apply(color_negative_redusuario, subset=['PORCENTAJE']),hide_index=True,height=450,use_container_width=True,column_order=("MES","SATISFECHOS","TOTALENCUESTAS","PORCENTAJE","NOMBREIPS"))
    
         
     with col2:
-       st.header("Favor Filtrar:")
+       st.header("PQRSF:")
        ips1 = st.selectbox(
        "Seleccione IPS:",
        options=dfpqrs["NOMBREIPS"].unique(),
@@ -429,7 +429,7 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
        "NOMBREIPS == @ips1 & MES == @mes1"
        )
  
-       st.dataframe(dfpqrs_selection.style.apply(color_negative_redusuario, subset=['TOTAL']),hide_index=True,height=450,use_container_width=True,column_order=("EVALUACION","MES","PETICIONES","QUEJAS","RECLAMOS","NOMBREIPS"))
+       st.dataframe(dfpqrs_selection.style.apply(color_negative_redusuario, subset=['TOTAL']),hide_index=True,height=450,use_container_width=True,column_order=("MES","PETICIONES","QUEJAS","RECLAMOS","NOMBREIPS"))
      
 
 
