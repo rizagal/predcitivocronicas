@@ -63,7 +63,7 @@ def format_func(option):
 with st.sidebar:
     
     selected = option_menu('Indicadores de Calidad y Sistema de Predicción de Enfermedades',
-                           ['Consulta Resultado Indicadores de Calidad',
+                           ['Consulta Resultado Indicadores de Oportunidad',
                             'Consulta Resultado Indicadores Atencion al Usuario',
                             'Importancia de los Indicadores',
                             'Planeacion Integral',
@@ -255,7 +255,7 @@ def color_negative_redusuario(s):
 
 
 #Parkinsons Prediction Page
-if(selected == 'Consulta Resultado Indicadores de Calidad'):
+if(selected == 'Consulta Resultado Indicadores de Oportunidad'):
     
     #Page title
     st.title('Resultado Indicadores de Calidad Red de Salud de Ladera E.S.E')   
