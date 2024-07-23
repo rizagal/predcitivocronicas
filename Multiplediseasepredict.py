@@ -393,7 +393,12 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
     "Seleccione Mes:",
     options=df["MES"].unique(),
     default=df["MES"].unique()
-)   
+)
+
+
+    df_selection = df.query(
+    "NOMBREIPS == @ips & MES == @mes"
+    )
 
 
 if(selected == 'Importancia de los Indicadores'):
