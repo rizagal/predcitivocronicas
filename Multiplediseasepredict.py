@@ -384,6 +384,7 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
     # ---- READ EXCEL ----
   
     df = pd.read_csv("atencionusuariostreamlit.csv")
+    dfpqrs = pd.read_csv("pqrsfstreamlit.csv")
     
     st.header("Favor Filtrar:")
     ips = st.selectbox(
@@ -421,7 +422,7 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
    
         
     with col2:
-        st.markdown("""---""")
+       st.dataframe(dfpqrs_selection.style.apply(color_negative_redusuario, subset=['TOTAL']),hide_index=True,height=450,use_container_width=True,column_order=("EVALUACION","MES","PETICIONES","QUEJAS","RECLAMOS","NOMBREIPS"))
      
 
 
