@@ -249,6 +249,9 @@ def color_negative_red(s):
     is_max = s == s.max()
     return ['background-color: #e88868' if v else '' for v in is_max]
 
+def color_negative_redusuario(s):
+    is_max = s == s.max()
+    return ['background-color: #e88868' if v else '' for v in is_min]
 
 
 #Parkinsons Prediction Page
@@ -414,7 +417,7 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
     col1,col2=st.columns(2)
 
     with col1:
-       st.dataframe(df_selection.style.apply(color_negative_red, subset=['PORCENTAJE']),hide_index=True,height=450,use_container_width=True,column_order=("EVALUACION","MES","PORCENTAJE","NOMBREIPS"))
+       st.dataframe(df_selection.style.apply(color_negative_redusuario, subset=['PORCENTAJE']),hide_index=True,height=450,use_container_width=True,column_order=("EVALUACION","MES","PORCENTAJE","NOMBREIPS"))
    
         
     with col2:
