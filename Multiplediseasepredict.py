@@ -422,7 +422,7 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
        mes1 = st.multiselect(
        "Seleccione Mes:",
        options=dfpqrs["MES"].unique(),
-       default=dfpqrs["MES"].unique()
+       
        )
     
     
