@@ -400,10 +400,14 @@ if(selected == 'Importancia de los Indicadores'):
                 st.video("indicadores.mp4", format="video/mp4", start_time=0)
 
 if(selected == 'Planeacion Integral'): 
-    st.title('Planeacion Integral')   
-    st.markdown("""
-    <embed src="https://github.com/rizagal/predcitivocronicas/blob/main/Planeacionintegral.pdf" width="400" height="400">
-    """, unsafe_allow_html=True)
+    with open("Planeacionintegral.pdf", "rb") as f:
+        base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+
+    # Embedding PDF in HTML
+    pdf_display = F'<embed src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf">'
+
+    # Displaying File
+    st.markdown(pdf_display, unsafe_allow_html=True)
 
 
 if(selected == 'Visualizacion de Servicios Habilitados por IPS - REPS'):
