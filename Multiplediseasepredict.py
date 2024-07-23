@@ -429,11 +429,11 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
        help="Seleccione Sede",  
        )
     
-        mes = st.multiselect(
-        "Seleccione Mes:",
-        options=dfpqrs["MES"].unique(),
-        default=dfpqrs["MES"].unique()
-        )
+       mes = st.multiselect(
+       "Seleccione Mes:",
+       options=dfpqrs["MES"].unique(),
+       default=dfpqrs["MES"].unique()
+       )
     
     
         dfpqrs_selection = dfpqrs.query(
