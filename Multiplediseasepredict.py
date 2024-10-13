@@ -288,11 +288,12 @@ if(selected == 'Consulta Resultado Indicadores de Oportunidad'):
     help="Seleccione Sede",  
     )
 
-    hora_actual = str(datetime.datetime.now()).replace(" ", "")
-    id_registrocontador = str(datetime.datetime.now()).replace("-", "")
-    id_registrocontador = id_registrocontador.replace(":", "")
-    id_registrocontador = id_registrocontador.replace(" ", "")
-    database.child("ipsconsultaindicadores").child(id_registrocontador[0:14]).update({'consultaips':ips,'fecha_consulta':hora_actual[0:10]})   
+    if (ips != 'Seleccione'):
+      hora_actual = str(datetime.datetime.now()).replace(" ", "")
+      id_registrocontador = str(datetime.datetime.now()).replace("-", "")
+      id_registrocontador = id_registrocontador.replace(":", "")
+      id_registrocontador = id_registrocontador.replace(" ", "")
+      database.child("ipsconsultaindicadores").child(id_registrocontador[0:14]).update({'consultaips':ips,'fecha_consulta':hora_actual[0:10]})   
 
 
     mes = st.multiselect(
