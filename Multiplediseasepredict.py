@@ -79,7 +79,7 @@ def format_func(option):
 
 with st.sidebar:
     
-    selected = option_menu('Indicadores de Calidad y Gestion del Riesgo',
+    selected = option_menu('Indicadores de Calidad y Gestion del Riesgo en Salud',
                            ['Consulta Resultado Indicadores de Oportunidad',
                             'Consulta Resultado Indicadores Atencion al Usuario',
                             'Importancia de los Indicadores',
