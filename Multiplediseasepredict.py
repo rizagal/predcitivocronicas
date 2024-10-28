@@ -86,10 +86,10 @@ with st.sidebar:
                             'Planeacion Integral',
                             'Visualizacion de Servicios Habilitados por IPS - REPS',
                             'Visualizacion Poblacion Contratada',
-                            'Predicción de Diabetes',
-                            'Modelo Construido Riesgo Cardiovascular',                            
-                            'Prediccion de Enfermedades Cardiacas',
-                            'Deteccion de Datos Anomalos'
+                            # 'Predicción de Diabetes',
+                            # 'Modelo Construido Riesgo Cardiovascular',                            
+                            # 'Prediccion de Enfermedades Cardiacas',
+                            # 'Deteccion de Datos Anomalos'
                             
                             ],
                            icons = ['activity','bar-chart','bell','grid','building','universal-access','book','heart','clipboard','person'],
