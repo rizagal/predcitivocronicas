@@ -275,7 +275,7 @@ def color_negative_redusuario(s):
 if(selected == 'Consulta Resultado Indicadores de Oportunidad'):
     
     #Page title
-    st.title('Resultado Indicadores de Calidad Red de Salud de Ladera E.S.E')   
+    st.title('Resultado Indicadores de Oportunidad de Citas en Consulta Externa')   
 
     # ---- READ EXCEL ----
   
