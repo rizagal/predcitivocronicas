@@ -356,7 +356,7 @@ if(selected == 'Consulta Resultado Indicadores de Oportunidad'):
         xaxis=(dict(showgrid=False))
     )
     fig_product_sales.update_traces(textposition="outside")
-    fig_product_sales.update_layout(title_text='Consolidado Oportunidad por Servicio Durante los Meses Seleccionados - En Dias', title_x=0.1)    
+    fig_product_sales.update_layout(title_text='Consolidado Oportunidad por Servicio Durante los Meses Seleccionados', title_x=0.1)    
     
     col1,col2=st.columns(2)
 
@@ -372,7 +372,7 @@ if(selected == 'Consulta Resultado Indicadores de Oportunidad'):
         xaxis=(dict(showgrid=False))
         )
         fig.update_traces(textposition="top center")        
-        fig.update_layout(title_text='Oportunidad de la IPS por Meses y Servicios Seleccionados', title_x=0.1)   
+        fig.update_layout(title_text='Oportunidad en Dias de la IPS por Meses y Servicios Seleccionados', title_x=0.1)   
         fig
 
 
@@ -388,7 +388,7 @@ if(selected == 'Consulta Resultado Indicadores de Oportunidad'):
         xaxis=(dict(showgrid=False))
         )
         fig.update_traces(textposition="inside")
-        fig.update_layout(title_text='Oportunidad de Todas las IPS y Servicios', title_x=0.3)        
+        fig.update_layout(title_text='Oportunidad en Dias de Todas las IPS y Servicios', title_x=0.3)        
         fig    
 
 
@@ -485,7 +485,7 @@ if(selected == 'Consulta Resultado Indicadores de Urgencias'):
         xaxis=(dict(showgrid=False))
     )
     fig_product_sales.update_traces(textposition="outside")
-    fig_product_sales.update_layout(title_text='Consolidado Oportunidad por Servicio Durante los Meses Seleccionados - En Minutos', title_x=0.1)    
+    fig_product_sales.update_layout(title_text='Consolidado Oportunidad por Servicio Durante los Meses Seleccionados', title_x=0.1)    
     
     col1,col2=st.columns(2)
 
@@ -501,7 +501,7 @@ if(selected == 'Consulta Resultado Indicadores de Urgencias'):
         xaxis=(dict(showgrid=False))
         )
         fig.update_traces(textposition="top center")        
-        fig.update_layout(title_text='Oportunidad de la IPS por Meses y Servicios Seleccionados - En Minutos', title_x=0.1)   
+        fig.update_layout(title_text='Oportunidad en Minutos de la IPS por Meses y Servicios Seleccionados', title_x=0.1)   
         fig    
 
 
