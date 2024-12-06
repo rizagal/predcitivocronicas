@@ -373,7 +373,32 @@ if(selected == 'Consulta Resultado Indicadores de Oportunidad'):
         )
         fig.update_traces(textposition="top center")        
         fig.update_layout(title_text='Oportunidad de la IPS por Meses y Servicios Seleccionados', title_x=0.1)   
+        fig
+
+
+    col1,col2=st.columns(2)
+    with col1:     
+       fig_product_sales
+
+    with col2:
+ 
+        fig = px.bar(df, x='OPORTUNIDAD', y='NOMBREIPS', color='SERVICIO', text="OPORTUNIDAD", orientation="h")
+        fig.update_layout(
+        plot_bgcolor="rgba(0,0,0,0)",
+        xaxis=(dict(showgrid=False))
+        )
+        fig.update_traces(textposition="inside")
+        fig.update_layout(title_text='Oportunidad de Todas las IPS y Servicios', title_x=0.3)        
         fig    
+
+
+def open_page(url):
+    open_script= """
+        <script type="text/javascript">
+            window.open('%s', '_blank').focus();
+        </script>
+    """ % (url)
+    html(open_script)
        
 
 #Indicadores de servicios de urgencias
@@ -479,34 +504,7 @@ if(selected == 'Consulta Resultado Indicadores de Urgencias'):
         fig.update_layout(title_text='Oportunidad de la IPS por Meses y Servicios Seleccionados', title_x=0.1)   
         fig    
 
-# fin indicadores de urgencias
-  
-  
 
-
-    col1,col2=st.columns(2)
-    with col1:     
-       fig_product_sales
-
-    with col2:
- 
-        fig = px.bar(df, x='OPORTUNIDAD', y='NOMBREIPS', color='SERVICIO', text="OPORTUNIDAD", orientation="h")
-        fig.update_layout(
-        plot_bgcolor="rgba(0,0,0,0)",
-        xaxis=(dict(showgrid=False))
-        )
-        fig.update_traces(textposition="inside")
-        fig.update_layout(title_text='Oportunidad de Todas las IPS y Servicios', title_x=0.3)        
-        fig    
-
-
-def open_page(url):
-    open_script= """
-        <script type="text/javascript">
-            window.open('%s', '_blank').focus();
-        </script>
-    """ % (url)
-    html(open_script)
 
 
 if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
