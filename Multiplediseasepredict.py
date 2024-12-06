@@ -501,7 +501,7 @@ if(selected == 'Consulta Resultado Indicadores de Urgencias'):
         xaxis=(dict(showgrid=False))
         )
         fig.update_traces(textposition="top center")        
-        fig.update_layout(title_text='Oportunidad de la IPS por Meses y Servicios Seleccionados', title_x=0.1)   
+        fig.update_layout(title_text='Oportunidad de la IPS por Meses y Servicios Seleccionados - En Minutos', title_x=0.1)   
         fig    
 
 
