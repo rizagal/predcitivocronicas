@@ -479,7 +479,7 @@ if(selected == 'Consulta Resultado Indicadores de Urgencias'):
         fig.update_layout(title_text='Oportunidad de la IPS por Meses y Servicios Seleccionados', title_x=0.1)   
         fig    
 
-// fin indicadores de urgencias
+# fin indicadores de urgencias
   
   
 
