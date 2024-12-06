@@ -405,11 +405,11 @@ def open_page(url):
 if(selected == 'Consulta Resultado Indicadores de Urgencias'):
     
     #Page title
-    st.title('Resultado Indicadores de Oportunidad de Citas en Consulta Externa')   
+    st.title('Resultado Indicadores del Servicio de Urgencias y Hospitalizacion')   
 
     # ---- READ EXCEL ----
   
-    df = pd.read_csv("oportunidadstreamlit.csv")
+    df = pd.read_csv("urgenciasindicadores.csv")
     
     st.header("Favor Filtrar:")
     ips = st.selectbox(
