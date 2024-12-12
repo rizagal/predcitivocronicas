@@ -94,7 +94,7 @@ with st.sidebar:
                             # 'Deteccion de Datos Anomalos'
                             
                             ],
-                           icons = ['activity','bar-chart','bell','clipboard','grid','building','universal-access','book','heart','clipboard','person'],
+                           icons = ['activity','bar-chart','bell','clipboard','grid','building','universal-access','book','heart','person','clipboard'],
                            default_index = 0)
    
 
