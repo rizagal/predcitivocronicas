@@ -83,8 +83,8 @@ with st.sidebar:
                            ['Consulta Resultado Indicadores de Oportunidad',
                             'Consulta Resultado Indicadores de Urgencias',
                             'Consulta Resultado Indicadores Atencion al Usuario',
-                            'Importancia de los Indicadores',
                             'Boletin Seguridad del Paciente',
+                            'Importancia de los Indicadores',                            
                             'Planeacion Integral',
                             'Visualizacion de Servicios Habilitados por IPS - REPS',
                             'Visualizacion Poblacion Contratada',
@@ -94,7 +94,7 @@ with st.sidebar:
                             # 'Deteccion de Datos Anomalos'
                             
                             ],
-                           icons = ['activity','bar-chart','bell','grid','building','universal-access','book','heart','clipboard','person'],
+                           icons = ['activity','bar-chart','bell','clipboard','grid','building','universal-access','book','heart','clipboard','person'],
                            default_index = 0)
    
 
