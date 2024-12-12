@@ -84,6 +84,7 @@ with st.sidebar:
                             'Consulta Resultado Indicadores de Urgencias',
                             'Consulta Resultado Indicadores Atencion al Usuario',
                             'Importancia de los Indicadores',
+                            'Boletin Seguridad del Paciente',
                             'Planeacion Integral',
                             'Visualizacion de Servicios Habilitados por IPS - REPS',
                             'Visualizacion Poblacion Contratada',
@@ -590,6 +591,12 @@ if(selected == 'Planeacion Integral'):
     #Page title
    st.title('Planeacion Integral e Indicadores en Salud')
    source1='./Planeacion Integral e Indicadores en Salud.pdf'
+   pdf_reader(source1)
+
+if(selected == 'Boletin Seguridad del Paciente'):
+    #Page title
+   st.title('Boletin Seguridad del Paciente')
+   source1='./Boletin Seguridad del Paciente.pdf'
    pdf_reader(source1)
 
 
