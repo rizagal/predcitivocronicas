@@ -421,10 +421,10 @@ if(selected == 'Consulta Resultado Indicadores de Urgencias'):
     
     st.header("Favor Filtrar:")
 
-     ano = st.selectbox(
+    ano = st.selectbox(
     "Seleccione Año:",
     options=df["ANO"].unique(),
-    help="Seleccione Año",  
+    help="Seleccione Año"  
     )
   
     ips = st.selectbox(
