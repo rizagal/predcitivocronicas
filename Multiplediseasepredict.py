@@ -283,7 +283,7 @@ if(selected == 'Consulta Resultado Indicadores de Oportunidad'):
   
     df = pd.read_csv("oportunidadstreamlit.csv")
 
-    ano = st.multiselect(
+    ano = st.selectbox(
     "Seleccione Año:",
     options=df["ANO"].unique(),
     default=df["ANO"].unique()
