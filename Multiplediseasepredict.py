@@ -298,7 +298,7 @@ if(selected == 'Consulta Resultado Indicadores de Oportunidad'):
       database.child("ipsconsultaindicadores").child(id_registrocontador[0:14]).update({'id':id_registrocontador[0:14],'nombre':ips,'fecha_consulta':hora_actual[0:10],'contador':1})   
 
 
-   ano = st.multiselect(
+    ano = st.multiselect(
     "Seleccione Año:",
     options=df["ANO"].unique(),
     default=df["ANO"].unique()
