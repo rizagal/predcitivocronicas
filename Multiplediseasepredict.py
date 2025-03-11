@@ -286,7 +286,7 @@ if(selected == 'Consulta Resultado Indicadores de Oportunidad'):
     ano = st.selectbox(
     "Seleccione Año:",
     options=df["ANO"].unique(),
-    default=df["ANO"].unique()
+  
 )
     
     st.header("Favor Filtrar:")
