@@ -282,6 +282,12 @@ if(selected == 'Consulta Resultado Indicadores de Oportunidad'):
     # ---- READ EXCEL ----
   
     df = pd.read_csv("oportunidadstreamlit.csv")
+
+    ano = st.multiselect(
+    "Seleccione Año:",
+    options=df["ANO"].unique(),
+    default=df["ANO"].unique()
+)
     
     st.header("Favor Filtrar:")
     ips = st.selectbox(
@@ -297,13 +303,6 @@ if(selected == 'Consulta Resultado Indicadores de Oportunidad'):
       id_registrocontador = id_registrocontador.replace(" ", "")
       database.child("ipsconsultaindicadores").child(id_registrocontador[0:14]).update({'id':id_registrocontador[0:14],'nombre':ips,'fecha_consulta':hora_actual[0:10],'contador':1})   
 
-
-    ano = st.multiselect(
-    "Seleccione Año:",
-    options=df["ANO"].unique(),
-    default=df["ANO"].unique()
-)
-  
 
     mes = st.multiselect(
     "Seleccione Mes:",
