@@ -374,14 +374,14 @@ if(selected == 'Consulta Resultado Indicadores de Oportunidad'):
         
     with col2:
        
-      fig = px.line(df_selection, x='MES', y='OPORTUNIDAD', color='SERVICIO', text="OPORTUNIDAD", markers=True)
-        fig.update_layout(
-        plot_bgcolor="rgba(0,0,0,0)",
-        xaxis=(dict(showgrid=False))
-        )
-        fig.update_traces(textposition="top center")        
-        fig.update_layout(title_text='Oportunidad en Dias de la IPS por Meses y Servicios Seleccionados', title_x=0.1)   
-        fig
+       fig = px.line(df_selection, x='MES', y='OPORTUNIDAD', color='SERVICIO', text="OPORTUNIDAD", markers=True)
+       fig.update_layout(
+       plot_bgcolor="rgba(0,0,0,0)",
+       xaxis=(dict(showgrid=False))
+       )
+       fig.update_traces(textposition="top center")        
+       fig.update_layout(title_text='Oportunidad en Dias de la IPS por Meses y Servicios Seleccionados', title_x=0.1)   
+       fig
 
 
     col1,col2=st.columns(2)
