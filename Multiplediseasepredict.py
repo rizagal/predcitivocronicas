@@ -320,7 +320,7 @@ if(selected == 'Consulta Resultado Indicadores de Oportunidad'):
 )
 
     df_selection = df.query(
-    "NOMBREIPS == @ips & MES == @mes & SERVICIO == @servicio"
+    "ANO == @ano & "NOMBREIPS == @ips & MES == @mes & SERVICIO == @servicio"
     )
 
     # st.dataframe(df_selection)
