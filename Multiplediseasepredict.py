@@ -449,7 +449,7 @@ if(selected == 'Consulta Resultado Indicadores de Urgencias'):
 )
 
     df_selection = df.query(
-    "NOMBREIPS == @ips & MES == @mes & SERVICIO == @servicio"
+    "AÑO == @ano & NOMBREIPS == @ips & MES == @mes & SERVICIO == @servicio"
     )
 
     # st.dataframe(df_selection)
