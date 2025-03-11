@@ -374,7 +374,7 @@ if(selected == 'Consulta Resultado Indicadores de Oportunidad'):
         
     with col2:
        
-        fig = px.line(df_selection, x='MES', y='OPORTUNIDAD', color='SERVICIO', text="OPORTUNIDAD", markers=True)
+      fig = px.line(df_selection, x='MES', y='OPORTUNIDAD', color='SERVICIO', text="OPORTUNIDAD", markers=True)
         fig.update_layout(
         plot_bgcolor="rgba(0,0,0,0)",
         xaxis=(dict(showgrid=False))
