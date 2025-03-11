@@ -390,14 +390,7 @@ if(selected == 'Consulta Resultado Indicadores de Oportunidad'):
 
     with col2:
  
-        fig = px.bar(df, x='OPORTUNIDAD', y='NOMBREIPS', color='SERVICIO', text="OPORTUNIDAD", orientation="h")
-        fig.update_layout(
-        plot_bgcolor="rgba(0,0,0,0)",
-        xaxis=(dict(showgrid=False))
-        )
-        fig.update_traces(textposition="inside")
-        fig.update_layout(title_text='Oportunidad en Dias de Todas las IPS y Servicios', title_x=0.3)        
-        fig    
+      fig_product_sales     
 
 
 def open_page(url):
