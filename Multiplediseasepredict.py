@@ -282,14 +282,15 @@ if(selected == 'Consulta Resultado Indicadores de Oportunidad'):
     # ---- READ EXCEL ----
   
     df = pd.read_csv("oportunidadstreamlit.csv")
-
+  
+    st.header("Favor Filtrar:")
     ano = st.selectbox(
     "Seleccione Año:",
     options=df["ANO"].unique(),
   
 )
     
-    st.header("Favor Filtrar:")
+   
     ips = st.selectbox(
     "Seleccione IPS:",
     options=df["NOMBREIPS"].unique(),
