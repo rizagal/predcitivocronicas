@@ -420,6 +420,13 @@ if(selected == 'Consulta Resultado Indicadores de Urgencias'):
     df = pd.read_csv("urgenciasindicadores.csv")
     
     st.header("Favor Filtrar:")
+
+     ano = st.selectbox(
+    "Seleccione Año:",
+    options=df["ANO"].unique(),
+    help="Seleccione Año",  
+    )
+  
     ips = st.selectbox(
     "Seleccione IPS:",
     options=df["NOMBREIPS"].unique(),
