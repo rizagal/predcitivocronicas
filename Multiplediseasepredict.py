@@ -535,6 +535,11 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
 
     st.markdown("""---""")
 
+    st.header("Favor Filtrar:")
+    ano = st.selectbox(
+    "Seleccione Año:",
+    options=df["ANO"].unique(),
+
     col1,col2=st.columns(2)
 
     with col1:
