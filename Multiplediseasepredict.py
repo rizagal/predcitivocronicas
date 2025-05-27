@@ -533,15 +533,17 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
     df = pd.read_csv("atencionusuariostreamlit.csv")
     dfpqrs = pd.read_csv("pqrsfstreamlit.csv")   
 
-    st.markdown("""---""")   
+    st.markdown("""---""")
+  
+    st.header("Favor Filtrar:")
+    ano = st.selectbox(
+    "Seleccione Año:",
+    options=df["ANO"].unique(),
+    )
 
     col1,col2=st.columns(2)
 
-    with col1:
-        st.header("Favor Filtrar:")
-        ano = st.selectbox(
-        "Seleccione Año:",
-        options=df["ANO"].unique(),
+    with col1:     
       
         st.header("Encuesta Satisfaccion:")
         ips = st.selectbox(
