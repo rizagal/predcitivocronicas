@@ -581,7 +581,7 @@ if(selected == 'Consulta Resultado Indicadores Atencion al Usuario'):
     
     
        dfpqrs_selection = dfpqrs.query(
-       "NOMBREIPS == @ips1 & MES == @mes1"
+       "ANO == @ano & NOMBREIPS == @ips1 & MES == @mes1"
        )
  
        st.dataframe(dfpqrs_selection.style.apply(color_negative_redusuario, subset=['TOTAL']),hide_index=True,height=450,use_container_width=True,column_order=("MES",("PETICIONES").format({"PETICIONES": "{:.1}"}),"QUEJAS","RECLAMOS","SUGERENCIAS","FELICITACIONES","TOTAL","NOMBREIPS"))
